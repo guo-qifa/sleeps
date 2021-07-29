@@ -1,0 +1,29 @@
+<view class="container">
+    <image class='background' src="{{imgUrl}}/infoBg.png" mode="aspectFill"></image>
+
+
+</view>
+<view class="line"></view>
+<view class="list" catchtap ="jumInfo"  wx:for="{{lists}}" wx:key="index" wx:for-item="item" data-item="{{item}}">
+    <view class="time">
+        <view class="tip_key" style="padding-top: 12px">
+            {{item.createTime}}
+        </view>
+    </view>
+    <view class="xt">
+        <view class="tip_key">脊椎形态</view>
+        <view class="tip_val">{{item.vertebralMorphology}}</view>
+    </view>
+    <view class="xt">
+        <view class="tip_key">适合床垫等级</view>
+        <view class="tip_val">{{item.hardnessGrade}}级</view>
+    </view>
+    <view>
+        <image  src="{{imgUrl}}/rightIcon.png"></image>
+    </view>
+</view>
+
+
+
+
+

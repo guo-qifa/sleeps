@@ -1,0 +1,2675 @@
+/* 大盒子 */
+page {
+    height: 100%;
+}
+
+/* 大盒子内容  */
+.container {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.topsleep.net/static/2-bg.png') no-repeat;
+    background-size: cover !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.page {
+    height: calc(100vh - 88rpx);
+    width: 100%;
+}
+
+/* 相机样式 */
+.camera {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.zhengmian {
+    padding: 0px;
+    /* background: url('../../images/zhengmian.png') no-repeat; */
+    background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.camera .controls {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* padding-bottom: 140rpx; */
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.camera .image {
+    width: 100%;
+    height: 220%;
+    /* max-height: 930rpx; */
+    margin: 0 auto;
+    background-size: cover !important;
+}
+
+.camera .close {
+    position: absolute;
+    top: 40rpx;
+    left: 40rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.camera .changeOver {
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.camera .takePhoto {
+    position: absolute;
+    bottom: 70rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgMask {
+    position: relative;
+}
+
+._imgMask {
+    height: 100% !important;
+    width: 106% !important;
+    /* position: absolute;
+    left:0;
+    bottom: 0;
+    right: 0;
+    top: 0; 
+    z-index: 9999; */
+}
+
+.imgMask .imgMaskBtn {
+    position: absolute;
+    bottom: 30rpx;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: 999;
+    color: #fff;
+    width: 70%;
+}
+
+.imgMask .imgMaskBtn .cp {
+    position: absolute;
+    bottom: 60rpx;
+    font-size: 20rpx;
+    z-index: 999;
+    color: #fff;
+    padding: 16rpx 50rpx;
+    left: 10%;
+    background: #00a9de;
+    border-radius: 50%;
+    font-size: 35rpx;
+}
+
+.imgMask .imgMaskBtn .zmqr {
+    position: absolute;
+    bottom: 60rpx;
+    z-index: 999;
+    color: #fff;
+    padding: 16rpx 50rpx;
+    background: #00a9de;
+    border-radius: 50%;
+    left: 55%;
+    font-size: 35rpx;
+}
+
+.camera .takePhoto {
+    border: 5rpx #fff solid;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera .btnbox .button {
+    background: #00a9de;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.camera .btnbox .confirm {
+    position: fixed;
+    z-index: 999;
+}
+
+.testbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.testbg-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+/* common 公共 头部 start */
+.comon_head {
+    height: 88rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.comon_head .offLine_logo {
+    margin: 14rpx 37rpx;
+    background: url('http://risk.rfyfb.com/file/offLine/1-logo.png') no-repeat;
+    background-size: contain !important;
+    display: flex;
+    flex-shrink: 0;
+    width: 120rpx;
+    height: 100%;
+}
+
+.comon_head .step_point {
+    margin-top: 20rpx;
+    display: flex;
+    height: 100%;
+    flex: 1;
+    color: #fff;
+    background: transparent;
+
+}
+
+.comon_head .step_point text {
+    display: flex;
+    padding: -14rpx;
+    width: 14rpx;
+    flex-shrink: 0;
+    height: 13rpx;
+    justify-content: center;
+    align-items: center;
+    font-size: 11rpx;
+    background: #fff;
+    border-radius: 50%;
+    margin: 29rpx 15rpx;
+    box-sizing: border-box;
+}
+
+.comon_head .step_point text.active {
+    box-sizing: content-box;
+    display: flex;
+    padding: 5rpx;
+    width: 20rpx;
+    height: 20rpx;
+    justify-content: center;
+    align-items: center;
+    font-size: 15rpx;
+    background: #00a9de;
+    border-radius: 50%;
+    margin: 20rpx 10rpx;
+}
+
+/* common 公共 头部 end */
+
+
+
+.page1 .page1Tip {
+    height: 120rpx;
+    width: 100%;
+    background: url('http://risk.rfyfb.com/file/offLine/1-biaotikuang1.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    margin: 40rpx auto 0;
+
+}
+
+.btn-left image {
+    width: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    top: 50%;
+    left: -58rpx;
+}
+
+.btn-right image {
+    width: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    top: 50%;
+    right: -58rpx;
+}
+
+.page1 .swiper {
+    height: 65%;
+    width: 85%;
+    margin: 30rpx auto 0;
+    border-radius: 0 5rpx 5rpx 0;
+    border: 1rpx solid #00acdc;
+    border-radius: 23rpx;
+}
+
+ 
+
+.page1 .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    margin: 15rpx auto 0;
+    justify-content: center;
+    width: 200rpx;
+    height: 18rpx;
+    display: flex;
+    align-items: center;
+
+}
+
+.page1 .dots .dot {
+    margin: 0 8rpx;
+    width: 4rpx;
+    height: 4rpx;
+    padding: 4rpx;
+    border-radius: 50%;
+    background-color: #596377;
+}
+
+.page1 .dots .dot.current {
+    background-color: #00a9de;
+}
+
+
+.page1 .dots .dot .point {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.page1 .swiper-image {
+    width: 100%;
+    height: 529rpx;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page1 .swiper-image {
+    display: flex;
+    flex-direction: row;
+}
+
+.page1 .swiper-image ._items {
+    display: flex;
+    flex: 1;
+}
+
+.page1 .swiper-image ._left {
+    display: flex;
+    flex: .8;
+    background: url('http://risk.rfyfb.com/file/offLine/1-ren.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    margin: 0 10rpx 0 30rpx;
+}
+
+.page1 .swiper-image ._right {
+    margin: auto 0;
+    display: flex;
+    padding-top: 30rpx;
+    flex-direction: column;
+}
+
+.page1 .swiper-image .rightItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.page1 .swiper-image .one {
+    padding: 0 20rpx;
+    flex: 1;
+    margin-bottom: 15rpx;
+}
+
+.page1 .swiper-image .one ._name {
+    font-size: 40rpx;
+    color: #fff;
+    margin: 0 10rpx;
+}
+
+.page1 .swiper-image .one ._post {
+    font-size: 20rpx;
+    color: #fff;
+}
+
+.page1 .swiper-image .one ._des {
+    font-size: 18rpx;
+    margin-left: 15rpx;
+    color: #fff;
+
+}
+
+.page1 .swiper-image .two {
+
+    flex: 1;
+    color: #fff;
+    font-size: 19rpx;
+    padding: 10rpx 0;
+    width: 91%;
+    margin: 0 auto;
+    border: 1px dotted #fff;
+    border-left: none;
+    border-right: none;
+
+}
+
+.page1 .swiper-image .two ._base {
+    height: 21rpx;
+    margin: 0 10rpx;
+    width: 100rpx;
+
+}
+
+.page1 .swiper-image .twoItem {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+
+.page1 .swiper-image .three {
+    padding: 20rpx 0;
+    width: 85%;
+    margin: 0 auto;
+    font-size: 22rpx;
+    color: #d5d8d7;
+    flex: 4;
+}
+
+.threeItem {
+    margin: 5rpx;
+}
+
+.userSayBox {
+    height: 95rpx;
+}
+
+.userSayBox .star {
+    font-weight: 700;
+    margin: 0 5rpx;
+    padding: 4rpx 10rpx;
+    border: 1px solid #00acde;
+    font-size: 18rpx;
+    display: inline-block;
+    color: #fff;
+    margin-top: 10rpx;
+
+}
+
+.hasGot1 {
+    display: flex;
+    margin: 0 0 15rpx 0;
+}
+
+.gotDes {
+    font-size: 18rpx;
+    margin-left: 10rpx;
+}
+
+.hasGot1 .gots {
+    display: flex;
+    flex-shrink: 0;
+    display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+    font-size: 16rpx;
+}
+
+.Got1 {
+    background: url('http://risk.rfyfb.com/file/offLine/1-paiming.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+.Got2 {
+    background: url('http://risk.rfyfb.com/file/offLine/1-jiangzhang.png') no-repeat;
+    background-size: contain !important;
+    background-position: center;
+}
+
+.page1 .buttonbox {
+    margin-top: 30rpx;
+}
+
+.bottom {
+    height: 45rpx;
+}
+
+.btn-left image {
+    width: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    top: 50%;
+    left: 4rpx;
+}
+
+.btn-right image {
+    width: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    top: 50%;
+    right: 4rpx;
+}
+
+.page1 .logo,
+.page4 .logo {
+    text-align: center;
+}
+
+.page1 .logo image,
+.page4 .logo image {
+    width: 330rpx;
+}
+
+.page1 .text {
+    color: #0d0d0d;
+    text-align: center;
+    display: flex;
+    font-size: 45rpx;
+    justify-content: center;
+    margin-bottom: 120rpx;
+}
+
+.page.page1 .buttonbox .button {
+    width: 340rpx;
+}
+
+.page2 .page1Tip {
+    height: 135rpx;
+    width: 100%;
+    background: url('http://risk.rfyfb.com/file/offLine/2-biaotikuang.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    margin: 40rpx auto 0;
+}
+
+.page2 .codeBox {
+    display: flex;
+    flex-direction: row;
+    padding: 0 40rpx;
+    margin: 16% 0;
+}
+
+.page2 .codeBox .codeBox1LeftCode {
+    display: flex;
+    flex: 0.8;
+    display: flex;
+    justify-content: left;
+
+}
+
+
+.page2 .codeBox .codeBox1LeftCode image {
+    width: 220rpx;
+    height: 220rpx;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+}
+
+.page2 .codeBox .codeBox1RightCon {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.page2 .codeBox .codeBox1RightCon .con {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.page2 .codeBox .con ._index {
+    flex-shrink: 0;
+    width: 53rpx;
+    height: 50rpx;
+    margin: 12rpx 10rpx 0 0;
+    text-align: center;
+    display: inline-block;
+    line-height: 51rpx;
+    background: #00acde;
+    border-radius: 50%;
+    color: rgb(245, 231, 231);
+    flex-direction: row;
+}
+
+
+.page2 .codeBox .con ._con {
+    text-align: left;
+    display: inline-block;
+    font-size: 26rpx;
+    color: #d7d7d7;
+}
+
+.page2 .buttonbox {
+    margin-top: 16%;
+}
+
+.page3 .page1Tip {
+    height: 120rpx;
+    width: 100%;
+    background: url('http://risk.rfyfb.com/file/offLine/3-biaotikuang.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    margin: 40rpx auto 0;
+}
+
+.page3 .manPic {
+    height: 450rpx;
+    width: 80%;
+    background: url('http://risk.rfyfb.com/file/offLine/3-jiancequ.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    margin: 40rpx auto 0;
+}
+
+.page3 .stand {
+    height: 250rpx;
+    width: 100%; 
+    margin: 2rpx auto 0;
+}
+.page3 .stand  .shbox{
+    margin: 0 auto;
+    width: 200rpx;
+    background: url('http://risk.rfyfb.com/file/offLine/3-dianzichen.png') no-repeat;
+    background-position: center; 
+    background-size: contain !important;
+    border-radius: 20rpx; 
+    height: 200rpx;
+    background-color: #fff;
+}
+
+.shbox {
+    animation: twinkling 2s infinite ease-in-out
+} 
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+} 
+@-webkit-keyframes twinkling {
+    0% {
+        box-shadow: 1px 1px 3px #fff;
+    }
+    50% {
+        box-shadow: 1px 1px 20px #fff;
+    }
+    100% {
+        box-shadow: 1px 1px 3px #fff;
+    }
+} 
+@keyframes twinkling {
+    0% {
+        box-shadow: 1px 1px 3px #fff;
+    }
+    50% {
+        box-shadow: 1px 1px 20px #fff;
+    }
+    100% {
+        box-shadow: 1px 1px 3px #fff;
+    }
+}
+
+.page3 ._loading {
+    color: #d7d7d7;
+    text-align: center;
+    margin-top: -25rpx;
+    margin-bottom: 30rpx;
+    font-size: 28rpx;
+}
+
+.page3 ._result {
+    display: flex;
+    color: #d7d7d7;
+    text-align: center;
+    margin: 20rpx 0;
+    justify-content: center;
+}
+.page3 ._result {
+    display: flex;
+    color: #d7d7d7;
+    text-align: center;
+    margin: 20rpx 0;
+}
+
+.page3 ._result ._values {
+    vertical-align: sub;
+    border-radius: 20rpx;
+    color: #fff;
+    color: #00acde;
+    text-align: center;
+    width: 120rpx;
+    display: inline-block;
+    height: 45rpx;
+    background-color: #fff;
+    margin: 0 20rpx;
+}
+
+.page4 .page1Tip {
+    height: 120rpx;
+    width: 100%;
+    background: url('http://risk.rfyfb.com/file/offLine/4-biaotikuang.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    margin: 40rpx auto 0;
+}
+
+.page4 .startBtn {
+    padding: 5rpx 27rpx;
+    font-size: 19px;
+}
+
+.page4 .man {
+    width: 100%;
+}
+
+.page4 .woman {
+    width: 100%;
+}
+
+.page4 .man .manPic {
+    width: 620rpx;
+    height: 611rpx;
+    margin: 0 auto;
+    margin-top: 7%;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/4-man.png') no-repeat;
+}
+
+.page4 .woman .womanPic {
+    width: 620rpx;
+    height: 611rpx;
+    margin: 0 auto;
+    margin-top: 7%;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/4-woman.png') no-repeat;
+}
+
+.page4 .pos {
+    width: 100%;
+    height: 370rpx;
+    margin: 0 auto;
+    background-size: contain !important;
+    background-position: center !important;
+    margin-top: -11%;
+    background-position: center;
+    background: url('http://risk.rfyfb.com/file/offLine/4-jianmoqu.png') no-repeat;
+}
+
+.page4 ._left {
+    position: absolute;
+    width: 30%;
+    height: 120rpx;
+    background: chartreuse;
+    background-position: center;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/4-zuo.png') no-repeat;
+    margin-top: 231rpx;
+    left: 0;
+    background-position: right !important;
+}
+.page4 ._right {
+    position: absolute;
+    width: 30%;
+    height: 120rpx;
+    background: chartreuse;
+    right: 0;
+    margin-top: 231rpx;
+    background-position: center;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/4-you.png') no-repeat;
+}
+.page4  ._left {
+    animation: leftArrow 1s infinite ease-in-out
+} 
+.page4  ._right {
+    animation: rightArrow 1s infinite ease-in-out
+} 
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+} 
+@-webkit-keyframes leftArrow {
+    0% {
+        left: -30rpx;
+    }
+    50% {
+        left: 0rpx;
+    }
+    100% {
+        left: -30rpx;
+    }
+} 
+@keyframes leftArrow {
+    0% {
+        left: -30rpx;
+    }
+    50% {
+        left: 0rpx;
+    }
+    100% {
+        left: -30rpx;
+    }
+}
+@-webkit-keyframes rightArrow {
+    0% {
+        right: -30rpx;
+    }
+    50% {
+        right: 0rpx;
+    }
+    100% {
+        right: -30rpx;
+    }
+} 
+@keyframes rightArrow {
+    0% {
+        right: -30rpx;
+    }
+    50% {
+        right: 0rpx;
+    }
+    100% {
+        right: -30rpx;
+    }
+}
+
+.page4 .backIcon, .page6 .backIcon{
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    background: chartreuse;
+    right: 30rpx; 
+    bottom: 30%;
+    background-position: center;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/4-fanhui.png') no-repeat;
+}
+/* page4 end */
+/* ============================= */
+/* page5 start */
+
+.page5 .page1Tip {
+    height: 160rpx;
+    width: 100%;
+    background: url('http://risk.rfyfb.com/file/offLine/5-biaotikuang.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    margin: 40rpx auto 0;
+}
+
+.page5 .inputbox .banner {
+    width: 70%;
+    height: 800rpx;
+    margin: 6% auto 0;
+    display: block;
+}
+.page5 .inputbox ._ready {
+    display: block;
+    width: 70%;
+    text-align: center;
+    height: 40rpx;
+    margin: 0 auto 0;
+    display: block;
+    position: relative;
+    top: -203rpx;
+    color: #ccc;
+    font-size: 24rpx;
+}
+.page5 .inputbox ._num , .page5 .inputbox ._start {
+    display: block;
+    width: 70%;
+    text-align: center;
+    height: 60rpx;
+    margin: 0 auto 0;
+    display: block;
+    position: relative;
+    top: -222rpx;
+    color: #fff; 
+}
+.page5 .inputbox ._num { 
+    font-size: 100rpx;
+} 
+.page5 .inputbox ._start { 
+    font-size: 53rpx;
+}
+
+/* page5 end */
+/* ============================= */
+/* page6 start */
+.page6 .outBg {
+    margin: 15% 0;
+    box-sizing: border-box;
+    width: 75%;
+    height: 372rpx;
+    padding-top: 50rpx;
+    padding-bottom: 50rpx;
+    margin: 50rpx auto;
+    background: url('http://risk.rfyfb.com/file/offLine/6-kuang.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+ 
+ 
+.page6 .outBg ._mode{
+    position: relative;
+    left: 25rpx;
+    top: -19rpx;
+    width: 90%;
+    height: 90%; 
+    border-radius: 12rpx; 
+    background-position: center;
+    background-size: contain !important;
+}
+.page6 .outBg ._mode image{
+    width: 100%;
+    height: 100%;
+}
+.page6 text {
+    color: #fff;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+.page6 .progressBox{
+    color: #fff;
+    width: 70%;
+    height: 100rpx;
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+}
+.page6 .loadings {
+    color: #fff;
+    width: 70%;
+    height: 100rpx;
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+    background: url('http://risk.rfyfb.com/file/offLine/6-xuanzhaun.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+
+.page7 .outBg {
+    margin: 15% 0;
+    box-sizing: border-box;
+    width: 75%;
+    height: 372rpx;
+    padding-top: 50rpx;
+    margin: 50rpx auto;
+    background: url('http://risk.rfyfb.com/file/offLine/6-kuang.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+.page7 .resultBox {
+    color: #fff;
+    width: 70%;
+    height: 400rpx;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: url('http://risk.rfyfb.com/file/offLine/7-yun.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+.page7 ._personOut {
+    color: #fff;
+    width: 90%;
+    height: 430rpx;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: url('http://risk.rfyfb.com/file/offLine/7-shuzi.gif') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    padding-top: 70rpx;
+}
+
+.page7 ._personOut ._person {
+    color: #fff;
+    width: 90%;
+    height: 230rpx;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: url('http://risk.rfyfb.com/file/offLine/7-ren.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+.page7 ._personOut ._finishText {
+    color: #fdfdfd;
+    font-size: 25rpx;
+    margin-top: 10rpx;
+}
+
+.page7 .textWord {
+    color: #fdfdfd;
+    height: 60rpx;
+    width: 95%;
+    text-align: center;
+    line-height: 60rpx;
+    margin: 0 auto;
+    background: rgba(95, 142, 211, 0.5);
+    font-size: 22rpx;
+    margin-top: 30rpx;
+    border-radius: 30rpx;
+}
+
+.slider1 {
+    position: relative;
+    top: -6rpx;
+    z-index: 999;
+}
+
+.page7 .outBg ._mode {
+    position: relative;
+    left: 25rpx;
+    top: -10rpx;
+    width: 90%;
+    height: 90%;
+    background: #ccc;
+    border-radius: 12rpx;
+    background: url('http://risk.rfyfb.com/file/offLine/6-moxing.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+.page7 .outBg ._analysis {
+    position: relative;
+    left: 25rpx;
+    top: -10rpx;
+    width: 90%;
+    height: 90%;
+    background: #ccc;
+    border-radius: 12rpx;
+    background: url('http://risk.rfyfb.com/file/offLine/6-moxing3.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+
+.page7 text {
+    color: #fff;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.page7 .loadings {
+    color: #fff;
+    width: 100rpx;
+    height: 100rpx;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background: url('http://risk.rfyfb.com/file/offLine/6-xuanzhaun.png') no-repeat;
+    background-position: center;
+    background-size: contain !important;
+}
+
+.page7 .buttonbox {
+    /* position: absolute;
+    top: 2% !important; */
+    margin-top: 50rpx;
+}
+
+
+.page8 {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 0rpx;
+}
+
+.page8 .radioBoxs {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    width: 100%;
+    margin-bottom: 100rpx;
+}
+
+.page8 .radio {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 0 35rpx;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.page8 .radio>image {
+    width: 100%;
+}
+
+.page8 .radiobtn {
+    height: 70rpx;
+    position: absolute;
+    top: 70rpx;
+    right: 60rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page8 .radiobtn text {
+    font-size: 50rpx;
+}
+
+.page8 .radiobtn image {
+    position: absolute;
+    width: 200rpx;
+    height: 70rpx;
+    left: 0;
+}
+
+.page8 .title2 {
+    margin-top: 10%;
+    margin-bottom: 5%
+}
+
+.page8 .rangeBox {
+    position: relative;
+    margin-top: 10rpx;
+    background: #00a9de;
+    height: 23rpx;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 16rpx;
+}
+
+.page8 .rangeBox .line {
+    position: absolute;
+    top: 2rpx;
+    left: 0;
+    right: 0;
+    height: 20rpx;
+    width: 94%;
+    margin: 0 auto;
+    border-radius: 6rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.page8 .rangeBox .line .lineType {
+    display: flex;
+    /* background: #FFF;  */
+    height: 100%;
+    position: relative;
+}
+
+.lineType .liness {
+    display: flex;
+    flex: 1;
+    height: 5rpx;
+    background: #fff;
+    margin-top: 8rpx;
+}
+
+.lineType ._light {
+    width: 35rpx;
+    height: 35rpx;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+.lineType .textName {
+    width: 70rpx;
+    height: 35rpx;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 39px;
+    font-size: 23rpx;
+    margin: auto;
+}
+
+._front {
+    flex: 1;
+
+}
+
+._mid {
+    flex: 2;
+}
+
+._after {
+    flex: 1;
+}
+
+.page8 .buttonbox {
+    /* position: absolute;
+    bottom: 2% !important; */
+    margin-top: 20rpx;
+}
+
+.page8  .tips {
+    /* position: absolute;
+    top: 70%; */
+    width: 100%;
+    height: 196rpx;
+    display: flex;
+    margin-top: 70rpx;
+}
+
+.page8 .tips .tipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/7-text1.png') no-repeat;
+}
+
+.page8 .contentbox {
+    padding-bottom: 40rpx;
+}
+
+.page8 .contentbox .content {
+    margin-top: 20rpx;
+}
+
+.page8 .dot {
+    position: absolute;
+    top: 368rpx;
+    left: -80rpx;
+}
+
+.page7 {
+    width: 100%;
+}
+
+.page7 .radioBoxs {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20%;
+    width: 100%;
+}
+
+.page7 .radio {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 0 10rpx;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.page7 .radio>image {
+    width: 100%;
+}
+
+.page7 .radiobtn {
+    height: 70rpx;
+    position: absolute;
+    top: 527rpx;
+    right: 79rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page7 .radiobtn text {
+    font-size: 50rpx;
+}
+
+.page7 .radiobtn image {
+    position: absolute;
+    width: 200rpx;
+    height: 70rpx;
+    left: 0;
+}
+
+.page7 .title {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 4%;
+    display: block;
+    margin: auto;
+    width: 360rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 29rpx;
+    background: #00a9de;
+}
+
+.page7 .tips {
+    position: absolute;
+    top: 59.5%;
+    width: 750rpx;
+    height: 342rpx;
+    display: flex;
+}
+
+.page7 .tips .tipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/8-text.png') no-repeat;
+}
+
+.page7 .radiobox {
+    padding: 0 35rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30rpx;
+    margin-top: 30rpx;
+    height: 630rpx;
+    margin-bottom: 40rpx;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.page7 .radio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.page7 .radio .dot {
+    margin: 0;
+}
+
+.page7 .radio text {
+    color: #fff;
+    margin-left: 15rpx;
+}
+
+
+
+.page7 .contentbox .content {
+    font-size: 26rpx;
+}
+
+.page7 .contentbox {
+    padding-bottom: 40rpx;
+}
+
+.page7 .contentbox .h1 {
+    margin-top: 25rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+
+
+.page8 {
+    padding: 0 35rpx;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 20rpx;
+}
+
+.page8 .title {
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 360rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 29rpx;
+    background: #00a9de;
+    margin-bottom: 30rpx;
+}
+
+.page8 .banner {
+    position: absolute;
+    top: 170rpx;
+    left: 20px;
+    width: 360rpx;
+}
+
+.page8 .banner .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.page8 .banner .point {
+    position: absolute;
+    display: flex;
+}
+
+.page8 .banner .point image {
+    width: 70rpx;
+}
+
+.page8 .banner .point1 {
+    top: 66rpx;
+    left: 90rpx;
+    width: 180rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point2 {
+    top: 85rpx;
+    left: 85rpx;
+    width: 195rpx;
+    z-index: 3;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point3 {
+    top: 45rpx;
+    left: 119rpx;
+    width: 120rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point4 {
+    top: 460rpx;
+    left: 105rpx;
+    width: 150rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point5 {
+    top: 290rpx;
+    left: 95rpx;
+    width: 175rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point6 {
+    top: 215rpx;
+    left: 95rpx;
+    width: 175rpx;
+    z-index: 3;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .contentbox .content {
+    font-size: 26rpx;
+}
+
+.page8 .contentbox {
+    padding-bottom: 40rpx;
+}
+
+.page8 .contentbox .h1 {
+    margin-top: 25rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.page8 .subtitle {
+    display: block;
+    text-align: right;
+    font-size: 24rpx;
+    padding-right: 75rpx;
+    margin-top: 95rpx;
+    color: #fff;
+}
+
+.page8 .radiobox {
+    padding-right: 40rpx;
+    margin-bottom: 95rpx;
+}
+
+.page8 .radiobox .radio {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 494rpx;
+    align-items: center;
+    width: 30%;
+    text-align: right;
+    margin-top: 15rpx;
+    font-size: 28rpx;
+}
+
+.page8 .radiobtn {
+    height: 70rpx;
+    position: absolute;
+    top: 70rpx;
+    right: 60rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.page8 .radio .dot {
+    margin-right: 20rpx;
+    margin-top: 0;
+    color: #FFF;
+}
+
+.page8 .dot .point {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #00a9de;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.page8 .dot.current .point {
+    opacity: 1;
+}
+
+
+.page8 .dot {
+    width: 18rpx;
+    height: 18rpx;
+    padding: 4rpx;
+    border-radius: 50%;
+    border: 1px #fff solid;
+    margin-top: 15rpx;
+    position: absolute;
+    top: 368rpx;
+    left: -80rpx;
+}
+
+
+
+.page8 .radio text {
+    color: #fdffff;
+}
+
+.page8 .line {
+    margin-top: 60rpx;
+}
+
+.page8 .buttonbox {
+    margin-top: 35rpx;
+}
+
+.page8 ._text {
+    background: rgba(95, 142, 211, 0.5);
+    font-size: 25rpx;
+    padding: 20rpx;
+    border-radius: 12rpx;
+    margin-top: 112rpx;
+    color: #fff;
+
+}
+
+
+.page9 .tips .jjbutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-1-text.png') no-repeat;
+}
+
+.page9 .tips .bybutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-3-text.png') no-repeat;
+}
+
+.page9 .tips .tongbutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-5-text.png') no-repeat;
+}
+
+.page9 .tips .tuibutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-6-text.png') no-repeat;
+}
+
+.page9 {
+    padding: 0 15rpx;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 60rpx;
+}
+
+.page9 .title {
+    text-align: center;
+    left: 0;
+    right: 0;
+    width: 80% !important;
+    color: #fff !important;
+    padding: 5rpx 10rpx;
+    border-radius: 26rpx;
+    font-size: 25rpx;
+    background: #00a9de;
+}
+
+.page9 .title2 {
+    position: relative;
+    top: 24rpx;
+}
+
+.page9 .title3 {
+    position: relative;
+    top: 120rpx;
+}
+
+
+.page9 ._much {
+    color: #fff;
+    font-size: 25rpx;
+}
+
+.page9 .banner {
+    position: absolute;
+    top: 240rpx;
+    left: 40px;
+    width: 378rpx;
+}
+
+.page6 .rangeBox {
+    position: relative;
+    margin-top: 10rpx;
+    background: #00a9de;
+    height: 23rpx;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 16rpx;
+}
+
+
+.page9 .rangeBox {
+    top: 60rpx;
+    position: relative;
+    margin-top: 10rpx;
+    background: #00a9de;
+    height: 23rpx;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 16rpx;
+}
+
+.page9 .rangeBox3 {
+    top: 155rpx;
+
+}
+
+.page9 .rangeBox .line {
+    position: absolute;
+    top: 2rpx;
+    left: 0;
+    right: 0;
+    height: 20rpx;
+    width: 94%;
+    margin: 0 auto;
+    border-radius: 6rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.page .rangeBox .line .lineType {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    position: relative;
+}
+
+.page9 .banner .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.page9 .banner .point {
+    position: absolute;
+    display: flex;
+}
+
+.page9 .banner .point image {
+    width: 70rpx;
+}
+
+.page9 .banner .point1 {
+    top: 66rpx;
+    left: 90rpx;
+    width: 180rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page9 .banner .point2 {
+    top: 85rpx;
+    left: 85rpx;
+    width: 195rpx;
+    z-index: 3;
+    display: none;
+    justify-content: space-between;
+}
+
+.page9 .banner .point3 {
+    top: 45rpx;
+    left: 119rpx;
+    width: 120rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page9 .banner .point4 {
+    top: 460rpx;
+    left: 105rpx;
+    width: 150rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page9 .banner .point5 {
+    top: 290rpx;
+    left: 95rpx;
+    width: 175rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page9 .banner .point6 {
+    top: 215rpx;
+    left: 95rpx;
+    width: 175rpx;
+    z-index: 3;
+    display: none;
+    justify-content: space-between;
+}
+
+.page9 .contentbox .content {
+    font-size: 26rpx;
+}
+
+.page9 .contentbox {
+    padding-bottom: 40rpx;
+}
+
+.page9 .contentbox .h1 {
+    margin-top: 25rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.page9 .subtitle {
+    display: block;
+    text-align: right;
+    font-size: 24rpx;
+    padding-right: 75rpx;
+    margin-top: 95rpx;
+    color: #fff;
+}
+
+.page9 .radiobox {
+    padding-right: 40rpx;
+    margin-bottom: 20rpx;
+    margin-top: 90rpx;
+}
+
+.page9 .radiobox .radio {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 494rpx;
+    align-items: center;
+    width: 30%;
+    text-align: right;
+    margin-top: 32rpx;
+    font-size: 28rpx;
+}
+
+.page9 .radio .dot {
+    margin-right: 20rpx;
+    margin-top: 0;
+    color: #FFF;
+}
+
+.page2 .dot,
+.page7 .dot,
+.page8 .dot,
+.page6 .dot {
+    width: 18rpx;
+    height: 18rpx;
+    padding: 4rpx;
+    border-radius: 50%;
+    border: 1px #fff solid;
+    margin-top: 15rpx;
+}
+
+.page9 .radio text {
+    color: #fdffff;
+}
+
+.page9 .radio .dot {
+    margin-right: 20rpx;
+    margin-top: 0;
+    color: #FFF;
+}
+
+.page9 .radio .dot {
+    margin: 0 10rpx;
+}
+
+.page9 .dot {
+    width: 18rpx;
+    height: 18rpx;
+    padding: 4rpx;
+    border-radius: 50%;
+    border: 1px #fff solid;
+    margin-top: 15rpx;
+}
+
+.page9 .line {
+    margin-top: 60rpx;
+}
+
+.page9 .buttonbox {
+    margin-top: calc(100vh/5);
+}
+
+.page9 .dot.current .point {
+    opacity: 1;
+}
+
+.page9 .dot .point {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #00a9de;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.page9 .tips {
+    margin-top: 50rpx;
+    width: 680rpx;
+    height: 220rpx;
+    margin: 0 auto;
+    display: flex;
+}
+
+.page9 .tips .jjbutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-1-text.png') no-repeat;
+}
+
+.page9 .tips .bybutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-3-text.png') no-repeat;
+}
+
+.page9 .tips .tongbutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-5-text.png') no-repeat;
+}
+
+.page9 .tips .tuibutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/9-6-text.png') no-repeat;
+}
+
+
+.page .buttonbox {
+
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page .buttonbox .button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d0d0d;
+    padding-bottom: 10rpx;
+}
+
+.page .buttonbox .button image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.buttonbox {
+    color: #fff;
+}
+
+.startBtn {
+    color: #fff;
+    padding: 7rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 30rpx;
+    background: #00a9de;
+}
+
+.choseSex {
+    position: absolute;
+    width: 340rpx;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 4%;
+}
+
+.choseAge {
+    display: flex;
+    width: 340rpx;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.page3 .buttonbox {
+    position: absolute;
+    bottom: 1px;
+}
+
+.page3 .buttonbox .text {
+    color: #fff;
+}
+
+/* page10 */
+
+.page10 ._result {
+    width: 100%;
+    height: 400rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+}
+
+.page10 ._result .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page10 .titles {
+    color: #fdfdfd;
+    height: 50rpx;
+    width: 75%;
+    text-align: center;
+    line-height: 50rpx;
+    margin: 0 auto;
+    background: rgba(95, 142, 211, 1);
+    font-size: 22rpx;
+    margin-top: 30rpx;
+    border-radius: 30rpx;
+    position: relative;
+    top: -59rpx;
+}
+
+.page10 ._result .bigs {
+    width: 300rpx;
+    height: 300rpx;
+    background: chartreuse;
+    border-radius: 50%;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/10-dayuan.png') no-repeat;
+
+}
+
+.page10 ._result .bigs ._unit {
+    font-size: 30rpx;
+    color: #fff;
+
+}
+
+.page10 ._result ._names {
+    font-size: 25rpx;
+    color: #fff;
+}
+
+.page10 ._result ._values {
+    font-size: 85rpx;
+    color: #fff;
+}
+
+.page10 .textBox {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.page10 ._result .smalls {
+    width: 270rpx;
+    height: 270rpx;
+    margin-left: 10rpx;
+    border-radius: 50%;
+    background: #0d0d0d;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/10-dayuan.png') no-repeat;
+}
+
+.page10 .lend {
+    position: relative;
+    top: 30rpx;
+    display: flex;
+    height: 50rpx;
+    flex-direction: row;
+}
+
+.page10 .lend .item {
+    flex: 1;
+    font-size: 18rpx;
+    color: #fff;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.page10 .lend .item .ios {
+    margin-right: 20rpx;
+    color: #00a9de;
+    font-weight: 700;
+}
+
+.page10 .lend .item .dian2 {
+    position: relative;
+    top: -28rpx;
+    margin-right: 20rpx;
+    color: #00a9de;
+    font-weight: 700;
+    font-size: 58rpx;
+}
+
+.page10 ._chose {
+    color: #fdfdfd;
+    height: 30rpx;
+    width: 75%;
+    text-align: center;
+    line-height: 30rpx;
+    margin: 0 auto;
+    background: rgba(95, 142, 211, .5);
+    font-size: 22rpx;
+    margin-top: 80rpx;
+    border-radius: 30rpx;
+    padding-top: 4rpx;
+    position: relative;
+
+}
+
+.page10 ._chose .itemBox {
+    color: #fdfdfd;
+    height: 1rpx;
+    width: 90%;
+    text-align: center;
+    line-height: 30rpx;
+    margin: 0 auto;
+    background: #fff;
+    font-size: 22rpx;
+    margin-top: 12rpx;
+    border-radius: 30rpx;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.page10 ._chose .itemBox view {
+    display: flex;
+    flex-shrink: 0;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 12rpx;
+    height: 12rpx;
+    position: relative;
+    top: -6rpx;
+}
+.page10 ._chose .itemBox view  text{
+  position: relative;
+  top: 20rpx;
+  left: -4rpx;
+  font-size: 16rpx;
+}
+.page10 .tiss{
+    margin-top: 40rpx; 
+}
+.page10 .tiss  image{
+    color: #fdfdfd;
+    width: 90% ; 
+    margin: 0 auto;  
+    display: block; 
+    margin-top: 40rpx; 
+    position: relative;
+}
+.slider10, .slider11{
+    width:88%;
+    margin:0 auto;
+    color:#fff; 
+    position: absolute; 
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;   
+}
+.slider10{
+    z-index: 999;
+}
+.slider11{
+    z-index: 900;   
+}
+.ranges{ 
+    width: 20%;
+    height: 5rpx;
+    background: #00acdc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 16.5rpx;
+    bottom: 0;
+    z-index: 999;
+    
+}
+.mark{
+    width:88%;
+    height: 30rpx;
+   
+    margin:0 auto;
+    color:#fff; 
+    position: absolute; 
+    left: -26rpx;
+    right: 0;
+    top: -35rpx;
+    bottom: 0;   
+}
+.mark ._icon{
+    position: relative;
+    width: 30rpx;
+    height: 30rpx; 
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/10-jiantou.png') no-repeat;
+}
+
+.titless {
+    width: 150rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: #00a9de;
+    border-radius: 28rpx;
+    margin: 10rpx auto 0;
+
+}
+
+._text {
+    font-size: 20rpx;
+    padding: 15rpx;
+
+}
+
+.page10 .buttonbox {
+    margin-top: 20rpx;
+}
+
+
+/* 背景图片 */
+/* .report-box {
+    background: url(https://www.topsleep.net/static/2-bg.png) no-repeat;
+    background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+} */
+
+/* 第一个框样式 */
+.total .title {
+    display: block;
+    position: absolute;
+    top: -86rpx;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    margin: auto;
+    width: 290rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 29rpx;
+    text-align: center;
+    background: #00a9de;
+    margin-top: 65rpx;
+}
+
+.infobox {
+    position: relative;
+    top: 85rpx;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+    height: 424rpx;
+    background-color: rgba(0, 169, 222, .33);
+    border-radius: 28rpx;
+}
+
+.infobox ._top {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.infobox ._top .basicInfo {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.infobox ._top .basicInfo .icon {
+    position: absolute;
+    top: 26rpx;
+    left: 25rpx;
+    justify-content: center;
+    align-items: center;
+    width: 12rpx;
+    height: 12rpx;
+    background-color: #00a9de;
+}
+
+.infobox ._top .basicInfo .name {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: SourceHanSansCN-Regular;
+    font-size: 19rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 20rpx;
+    letter-spacing: 14rpx;
+    color: #ffffff;
+}
+
+.infobox ._top .basicInfo .value {
+    display: flex;
+    flex: 2;
+    justify-content: left;
+    align-items: center;
+    font-family: SourceHanSansCN-Regular;
+    font-size: 19rpx;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 20rpx;
+    letter-spacing: 4rpx;
+    color: #ffffff;
+}
+
+.infobox ._bottom {
+    display: flex;
+    flex: 2;
+    padding: 3px 20rpx;
+}
+
+.infobox ._bottom .info {
+    margin: 0 13rpx;
+    width: 100rpx;
+    height: 100rpx;
+    background: url(https://www.topsleep.net/static/10-circle.png) no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    position: relative;
+    display: flex;
+    flex: 2;
+    justify-content: center;
+}
+
+.infobox ._bottom .info .b_name {
+    position: absolute;
+    color: #fff;
+    font-size: 17rpx;
+    top: 108rpx;
+    text-align: center;
+    width: 110rpx;
+}
+
+.infobox ._bottom .info .b_value {
+    position: absolute;
+    color: #fff;
+    font-size: 23rpx;
+    top: 37rpx;
+    left: 12rpx;
+    text-align: center;
+    width: 110rpx;
+}
+
+/* 第二个框样式 */
+.echartsBox {
+    margin: 3% auto;
+    width: 90%;
+    height: 227rpx;
+    background-color: rgba(0, 169, 222, .33);
+    border-radius: 28rpx;
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.echartsBox .pic image {
+    display: inline-block;
+}
+
+.echartsBox .pic {
+    display: flex;
+    flex: 1;
+    margin: 10rpx;
+    border: 1px solid rgb(204, 204, 204);
+
+}
+
+.levelBox {
+    margin: 3% auto;
+    width: 90%;
+    height: 167rpx;
+    background-color: rgba(0, 169, 222, .33);
+    border-radius: 28rpx;
+    background: url(https://www.topsleep.net/static/10-kuang2.png) no-repeat;
+    background-size: contain !important;
+    position: relative;
+}
+
+.levelBox .levelInfo {
+    width: 152rpx;
+    height: 126rpx;
+    position: absolute;
+}
+
+.levelBox .levelInfo ._bottomText {
+    color: #fff;
+    font-size: 19rpx;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 8rpx;
+}
+
+.levelBox ._level {
+    left: 134rpx;
+    top: 19rpx;
+}
+
+.levelBox ._level ._value {
+    width: 100%;
+    height: 70%;
+    top: 4rpx;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-size: 92rpx;
+    line-height: 88rpx;
+}
+
+.levelBox ._level ._unit {
+    width: 30rpx;
+    color: #fff;
+    font-size: 20rpx;
+    position: absolute;
+    bottom: 36rpx;
+    left: 104rpx;
+}
+
+.levelBox ._level2 ._value {
+    width: 100%;
+    height: 70%;
+    top: 4rpx;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-size: 56rpx;
+    line-height: 88rpx;
+}
+
+.levelBox .codePic {
+    left: 286rpx;
+    top: 32rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.levelBox ._level2 {
+    left: 434rpx;
+    top: 21rpx;
+    width: 139rpx;
+    height: 122rpx;
+
+}
+
+
+/* 第三个框样式 */
+.goods {
+    margin-top: 10%;
+    width: 606rpx;
+    height: 477rpx;
+    background-color: rgba(0, 169, 222, .33);
+    border-radius: 28rpx;
+}
+
+.goods .title {
+    display: block;
+    position: absolute;
+    top: -86rpx;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    margin: auto;
+    width: 390rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 26rpx;
+    text-align: center;
+    background: #00a9de;
+    margin-top: 65rpx;
+}
+
+.goods .content {
+    width: 100%;
+    height: 350rpx;
+    margin-top: 60rpx;
+    height: 100%;
+}
+
+.page-section {
+    height: 100%;
+}
+
+swiper {
+    height: 100%;
+}
+
+
+.btn-left image {
+    width: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    top: 50%;
+    left: 6rpx;
+}
+
+.btn-right image {
+    width: 45rpx;
+    height: 45rpx;
+    position: absolute;
+    top: 50%;
+    right: 5rpx;
+}
+
+.swiper-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.swiper-item .conLeft {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex: 1;
+    margin: 80rpx 50rpx 38rpx 50rpx;
+    background: url(https://www.topsleep.net/static/10-kuang4.png) no-repeat;
+    background-size: contain !important;
+}
+
+.swiper-item .conRight {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex: 1;
+    margin: 5rpx;
+    margin: 80rpx 50rpx 38rpx 50rpx;
+    background: url(https://www.topsleep.net/static/10-kuang4.png) no-repeat;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+}
+
+/* <text class="textName">偏硬</text>
+<view class="bgCode"></view>
+<view class="bgGood"></view>
+<view class="goodName"></view>
+<view class="goodDes"></view>
+<view class="goodBtn"></view> */
+.textName {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: -19%;
+    font-size: 25rpx;
+    color: #fff;
+}
+
+.bgCode {
+    width: 75rpx;
+    height: 75rpx;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: -8%;
+    right: 0;
+    margin: auto;
+    /* background-color: #00a9de; */
+    /* background: url('https://www.topsleep.net/static//c1.png'); */
+    background-size: contain !important;
+    background-repeat: no-repeat;
+}
+
+.bgGood {
+    width: 90%;
+    height: 90rpx;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 18%;
+    right: 0;
+    margin: auto;
+
+    /* background: url('https://www.topsleep.net/static/10-zhentou.png'); */
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.goodDes {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 49%;
+    font-size: 19rpx;
+    color: #fff;
+}
+
+.goodName {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    font-size: 25rpx;
+    color: #fff;
+}
+
+.goodBtn {
+    position: absolute;
+    left: 0;
+    bottom: 34%;
+    right: 0;
+    margin: auto;
+    width: 80%;
+    height: 30rpx;
+    border-radius: 15rpx;
+    text-align: center;
+    font-size: 21rpx;
+    color: #fff;
+    background: #00a9de;
+}
+
+.goodBtn .hand {
+    position: absolute;
+    background: url('https://www.topsleep.net/static/10-hand.png');
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-size: contain !important;
+    width: 25rpx;
+    height: 25rpx;
+    right: -6rpx;
+    top: 16rpx;
+}
+
+.buttonbox {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    margin-top: 14%;
+}
+
+.buttonbox .button {
+    width: 340rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d0d0d;
+    padding-bottom: 10rpx;
+}
+
+.buttonbox .button .startBtn {
+    color: #fff;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 39rpx;
+    background: #00a9de; 
+}
+
+.page11  .srues {
+    font-size: 30rpx;
+    justify-content: flex-end !important;
+}
+.page11  .reports {
+    font-size: 30rpx;
+    justify-content: flex-start !important;
+
+}
+
+ 
+
+ 

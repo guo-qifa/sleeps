@@ -1,0 +1,1422 @@
+.container {
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.camera {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.zhengmian {
+    padding: 0px;
+    /* background: url('../../images/zhengmian.png') no-repeat; */
+    background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.camera .controls {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* padding-bottom: 140rpx; */
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.camera .image {
+    width: 100%;
+    height: 220%;
+    /* max-height: 930rpx; */
+    margin: 0 auto;
+    background-size: cover !important;
+}
+
+.camera .close {
+    position: absolute;
+    top: 40rpx;
+    left: 40rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.camera .changeOver {
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.camera .takePhoto {
+    position: absolute;
+    bottom: 70rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgMask {
+    position: relative;
+} 
+._imgMask {
+    height: 100% !important;
+    width: 106% !important;
+    /* position: absolute;
+    left:0;
+    bottom: 0;
+    right: 0;
+    top: 0; 
+    z-index: 9999; */
+}
+
+.imgMask .imgMaskBtn {
+    position: absolute;
+    bottom: 30rpx;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: 999;
+    color: #fff;
+    width: 80%;
+}
+
+.imgMask .imgMaskBtn .cp {
+    position: absolute;
+    bottom: 60rpx;
+    font-size: 28rpx;
+    z-index: 999;
+    color: #fff;
+    padding: 16rpx 50rpx;
+    left: 10%;
+    background: #00a9de;
+    border-radius: 50rpx;
+    /* font-size: 35rpx; */
+}
+
+.imgMask .imgMaskBtn .zmqr {
+    position: absolute;
+    bottom: 60rpx;
+    z-index: 999;
+    font-size: 28rpx;
+    color: #fff;
+    padding: 16rpx 50rpx;
+    background: #00a9de;
+    border-radius: 50rpx;
+    left: 55%;
+    /* font-size: 35rpx; */
+}
+
+.camera .takePhoto {
+    border: 5rpx #fff solid;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera .btnbox .button {
+    background: #00a9de;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.camera .btnbox .confirm {
+    position: fixed;
+    z-index: 999;
+}
+
+.testbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.testbg-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.page {
+    padding: 0px;
+    background: url('https://www.topsleep.net/static/2-bg.png') no-repeat;
+    background-size: cover !important;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.page1 .swiper {
+    height: 73%;
+    width: 100%;
+    margin: 30rpx auto 0;
+    border-radius: 0 5rpx 5rpx 0;
+}
+
+.page1 .dots {
+    position: absolute;
+    top: 69%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 200rpx;
+    height: 18rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page1 .dots .dot {
+    width: 24rpx;
+    height: 24rpx;
+    padding: 4rpx;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.page1 .dots .dot.current .point {
+    opacity: 1;
+}
+
+.page1 .dots .dot .point {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #00a9de;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.page1 .swiper-image {
+    width: 100%;
+    height: 529rpx;
+    background-size: contain !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page1 .item1 {
+    background-image: url('https://www.topsleep.net/static/2-poster1.png');
+}
+
+.page1 .item2 {
+    background-image: url('https://www.topsleep.net/static/2-poster2.png');
+}
+
+.page1 .item3 {
+    background-image: url('https://www.topsleep.net/static/2-poster3.png');
+}
+
+.page1 .item4 {
+    background-image: url('https://www.topsleep.net/static/2-poster4.png');
+}
+
+
+.page1 .logo,
+.page4 .logo {
+    text-align: center;
+}
+
+.page1 .logo image,
+.page4 .logo image {
+    width: 330rpx;
+}
+
+.page1 .text {
+    color: #0d0d0d;
+    text-align: center;
+    display: flex;
+    font-size: 45rpx;
+    justify-content: center;
+    margin-bottom: 120rpx;
+}
+
+.page.page1 .buttonbox .button {
+    width: 340rpx;
+}
+
+.page2 .sexbox {
+    width: 490rpx;
+    height: 40%;
+    margin: 27% auto 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.page2 .left,
+.page2 .right {
+    width: 210rpx;
+    height: 660rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page2 .right {
+    width: 140rpx;
+}
+
+.page2 .left image {
+    width: 200rpx;
+    height: 620rpx;
+    margin-bottom: 15rpx;
+}
+
+.page2 .right image {
+    width: 140rpx;
+    height: 620rpx;
+    margin-bottom: 15rpx;
+}
+
+.page2 .dot,
+.page7 .dot,
+.page8 .dot,
+.page6 .dot {
+    width: 24rpx;
+    height: 24rpx;
+    padding: 4rpx;
+    border-radius: 50%;
+    border: 1px #fff solid;
+    margin-top: 15rpx;
+}
+
+.page2 .dot.current .point,
+.page7 .dot.current .point,
+.page8 .dot.current .point,
+.page6 .dot.current .point {
+    opacity: 1;
+}
+
+.page2 .dot .point,
+.page7 .dot .point,
+.page8 .dot .point,
+.page6 .dot .point {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #00a9de;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.page2 .agebox {
+    margin: 0 auto;
+    width: 457rpx;
+    height: 154rpx;
+    display: flex;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 6%;
+    border-radius: 15rpx;
+    background: url('https://www.topsleep.net/static/3-kuang.png') no-repeat;
+    background-position: center center;
+    background-size: contain !important;
+    position: relative
+
+}
+
+.page2 .agebox .tip {
+    display: block;
+    width: 200rpx;
+    text-align: center;
+    color: #00a9de;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.page2 .agebox .after {
+    display: block;
+    text-align: center;
+    height: 60rpx;
+    color: #fff;
+    line-height: 63rpx;
+}
+
+.page2 .agebox input {
+    width: 100rpx;
+    color: #fff;
+    font-size: 56rpx;
+    height: 90rpx;
+    line-height: 40rpx;
+    position: relative;
+    text-align: center;
+}
+.page2 .agebox .age {
+    animation: changeColor 1s linear infinite;
+}
+.page2 .agebox image {
+    position: absolute;
+    width: 30rpx;
+    height: 20rpx;
+}
+.page2 .agebox .agebox_img1 {
+    top: -10rpx;
+    left: 250rpx;
+    animation: up 1s linear infinite;
+}
+.page2 .agebox .agebox_img2 {
+    bottom: -10rpx;
+    left: 250rpx;
+    animation: down 1s linear infinite;
+}
+@keyframes up{
+    0%{top: -10rpx;}
+    25%{top: -15rpx;}
+    50%{top: -20rpx;}
+    75%{top: -15rpx;}
+    100%{top: -10rpx;}
+}
+@keyframes down{
+    0%{bottom: -10rpx;}
+    25%{bottom: -15rpx;}
+    50%{bottom: -20rpx;}
+    75%{bottom: -15rpx;}
+    100%{bottom: -10rpx;}
+}
+
+.page3 {
+    /* width: 100%;
+    height: 100%;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/5-man.png') no-repeat; */
+}
+
+.page3 .man {
+    width: 100%;
+}
+
+.page3 .man .manPic {
+    width: 750rpx;
+    height: 692rpx;
+    margin-top: 15%;
+    background-size: contain !important;
+    /* background: url('https://www.topsleep.net/static/4man.png') no-repeat; */
+    background: url('http://risk.rfyfb.com/file/offLine/online/back_man.png') no-repeat;
+}
+
+
+.page3 .buttonbox {
+    margin-bottom: 15rpx !important;
+}
+
+.page3 .woman {
+    width: 100%;
+}
+
+.page3 .woman .womanPic {
+    width: 750rpx;
+    height: 692rpx;
+    margin-top: 15%;
+    background-size: contain !important;
+    /* background: url('https://www.topsleep.net/static/4woman.png') no-repeat; */
+    background: url('http://risk.rfyfb.com/file/offLine/online/back_woman.png') no-repeat;
+}
+
+.page3 .tips {
+    position: absolute;
+    top: 69%;
+    width: 750rpx;
+    height: 210rpx;
+    display: flex;
+}
+
+.page3 .tips .tipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background-position: center !important;
+    background: url('http://risk.rfyfb.com/file/offLine/online/4-1tishi.png') no-repeat;
+}
+
+
+.page3 text.h1 {
+    font-size: 46rpx;
+    margin-bottom: 13rpx;
+}
+
+.page3 .startBtn {
+    padding: 5rpx 27rpx;
+    /* font-size: 19px; */
+}
+.page3 .take-photo {
+    border-radius: 50%;
+    width: 130rpx;
+    height: 130rpx;
+    padding: 0;
+    text-align: center;
+    line-height: 130rpx;
+}
+
+.page4 .startBtn {
+    padding: 5rpx 27rpx;
+    /* font-size: 19px; */
+}
+
+
+.page3 .contentbox,
+.page6 .contentbox,
+.page7 .contentbox,
+.page8 .contentbox,
+.page5 .contentbox {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50rpx;
+    margin-top: 40rpx;
+    position: relative;
+    padding-top: 75rpx;
+    margin-bottom: 60rpx;
+}
+
+.page3 .contentbox .textbg,
+.page6 .contentbox .textbg,
+.page7 .contentbox .textbg,
+.page8 .contentbox .textbg,
+.page5 .contentbox .textbg {
+    position: absolute;
+    top: 0;
+    left: 20rpx;
+    width: 710rpx;
+    height: 100%;
+}
+
+.page3 .contentbox .content,
+.page6 .contentbox .content,
+.page7 .contentbox .content,
+.page8 .contentbox .content,
+.page5 .contentbox .content {
+    font-size: 30rpx;
+}
+
+.page4 .man {
+    width: 100%;
+}
+
+.page4 .woman {
+    width: 100%;
+}
+
+.page4 .man .manPic {
+    width: 693rpx;
+    height: 811rpx;
+    margin: 0 auto;
+    margin-top: 7%;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/5man.png') no-repeat;
+}
+
+.page4 .woman .womanPic {
+    width: 693rpx;
+    height: 811rpx;
+    margin: 0 auto;
+    margin-top: 7%;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/woman.png') no-repeat;
+}
+
+.page4 .tips {
+    position: absolute;
+    top: 73%;
+    width: 750rpx;
+    height: 300rpx;
+    display: flex;
+}
+
+.page4 .tips .tipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('https://www.topsleep.net/static/5-tishi.png') no-repeat;
+}
+
+.page4 .buttonbox {
+    margin-bottom: 1% !important;
+}
+
+.page4 .logo {
+    margin-top: 60rpx;
+}
+
+.page4 .text text {
+    display: block;
+    text-align: center;
+}
+
+.page4 .text .h1 {
+    margin-top: 50rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+    margin-bottom: 35rpx;
+}
+
+.page4 .text .content {
+    color: #2c2c2c;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.page4 .buttonbox {
+    position: absolute;
+    bottom: 50rpx;
+    z-index: 666;
+}
+
+.page5 .inputbox {
+    padding-left: 10rpx;
+    padding-right: 20rpx;
+    margin-top: 100rpx;
+    position: relative;
+}
+
+.page5 .title {
+    position: absolute;
+    top: 0;
+    right: 36rpx;
+    width: 330rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 29rpx;
+    text-align: center;
+    background: #00a9de;
+}
+
+.page6 .title {
+    display: block;
+    margin: auto;
+    width: 400rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 29rpx;
+    text-align: center;
+    background: #00a9de;
+}
+
+.page5 .inputbox .banner {
+    width: 290rpx;
+    height: 600rpx;
+}
+
+.page5 .inputbox .input {
+    color: #fff;
+    position: absolute;
+    width: 270rpx;
+    height: 80rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 0;
+    padding-left: 40rpx;
+    box-sizing: border-box;
+}
+
+.page5 .inputbox .input.input1 {
+    position: absolute;
+    top: 74rpx;
+    right: 170rpx;
+}
+
+.page5 .inputbox .input.input1 .text {
+    position: absolute;
+    top: 44rpx;
+    right: 109rpx;
+    font-size: 27rpx;
+}
+
+.page5 .inputbox .input.input1 input {
+    position: absolute;
+    top: 37rpx;
+    right: -16rpx;
+    font-size: 40rpx;
+    color: #fff;
+    animation: changeColor 2s linear infinite;
+}
+
+.page5 .inputbox .input.input1 .unit {
+    position: absolute;
+    top: 45rpx;
+    right: -89rpx;
+    color: #fff;
+    font-size: 27rpx;
+}
+
+.page5 .inputbox .input.input2 {
+    position: absolute;
+    top: 247rpx;
+    right: 170rpx;
+}
+
+.page5 .inputbox .input.input2 .text {
+    position: absolute;
+    top: 44rpx;
+    right: 109rpx;
+    font-size: 27rpx;
+}
+
+.page5 .inputbox .input.input2 input {
+    position: absolute;
+    top: 37rpx;
+    right: -16rpx;
+    font-size: 40rpx;
+    color: #fff;
+    animation: changeColor 1s linear infinite;
+}
+@keyframes changeColor{
+    0%{opacity: 1;}
+    25%{opacity: 0.5;}
+    50%{opacity: 0;}
+    75%{opacity: 0.5;}
+    100%{opacity: 1;}
+  }
+
+.page5 .inputbox .input.input2 .unit {
+    position: absolute;
+    top: 48rpx;
+    right: -89rpx;
+    color: #fff;
+    font-size: 27rpx;
+}
+
+.page5 .inputbox .input.input3 {
+
+    padding-top: 20rpx;
+    position: absolute;
+    top: 420rpx;
+    right: 63rpx;
+    width: 415rpx;
+    height: 130rpx;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.page5 .inputbox text {
+    display: block;
+    width: 86rpx;
+    color: #00a9de;
+}
+
+.page5 .inputbox input {
+    width: 128rpx;
+    color: #00a8de;
+    font-size: 46rpx;
+    height: 52rpx;
+    line-height: 40rpx;
+    position: relative;
+    text-align: center;
+}
+
+
+.page5 .inputbox .input image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
+.page5 .inputbox .input3 .bmitext {
+    position: absolute;
+    top: 59rpx;
+    right: 237rpx;
+    display: flex;
+    align-items: flex-end;
+    width: 111rpx;
+    font-size: 27rpx;
+    color: #00a9de;
+}
+
+.page5 .inputbox .input3 .bmitext .h1 {
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.page5 .inputbox .input3 .bmi {
+    position: absolute;
+    top: 44rpx;
+    right: 72rpx;
+    color: #fff;
+    font-size: 46rpx;
+}
+
+.page5 .inputbox .input3 .bmiinfo {
+    position: absolute;
+    top: 148rpx;
+    right: -15rpx;
+    width: 100%;
+    padding-left: 40rpx;
+    font-size: 18rpx;
+    color: #fff;
+}
+
+.page5 .tips {
+    position: absolute;
+    top: 63%;
+    width: 750rpx;
+    height: 290rpx;
+    display: flex;
+}
+
+.page5 .tips .tipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/online/6-text.png') no-repeat;
+    /* background: url('https://www.topsleep.net/static/6-text.png') no-repeat; */
+}
+
+.page5 .buttonbox {
+    position: absolute;
+    bottom: 2.5%;
+}
+
+
+.page6 {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 50rpx;
+}
+
+.page6 .radioBoxs {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    width: 100%;
+}
+
+.page6 .radio {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 0 35rpx;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 30rpx; */
+}
+
+.page6 .radio>image {
+    width: 100%;
+}
+
+.page6 .radiobtn {
+    height: 70rpx;
+    position: absolute;
+    top: 70rpx;
+    right: 60rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page6 .radiobtn text {
+    font-size: 50rpx;
+}
+
+.page6 .radiobtn image {
+    position: absolute;
+    width: 200rpx;
+    height: 70rpx;
+    left: 0;
+}
+
+.page6 .title2 {
+    margin-top: 10%;
+    margin-bottom: 5%
+}
+
+.page6 .rangeBox {
+    position: relative;
+    margin-top: 10rpx;
+    background: linear-gradient(to right, purple 0%,#00a9de 100%);
+    /* background: #00a9de; */
+    height: 36rpx;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 16rpx;
+}
+
+.page6 .rangeBox .line {
+    position: absolute;
+    top: 2rpx;
+    left: 0;
+    right: 0;
+    height: 20rpx;
+    width: 94%;
+    margin: 0 auto;
+    border-radius: 6rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.page6 .rangeBox .line .lineType {
+    display: flex;
+    /* background: #FFF;  */
+    height: 100%;
+    position: relative;
+}
+
+.lineType .liness {
+    display: flex;
+    flex: 1;
+    height: 5rpx;
+    background: #fff;
+    margin-top: 8rpx;
+}
+
+.lineType ._light {
+    width: 35rpx;
+    height: 35rpx;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+.lineType .textName {
+    width: 135rpx;
+    height: 35rpx;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 39px;
+    font-size: 23rpx;
+    margin: auto;
+}
+
+._front {
+    flex: 1;
+
+}
+
+._mid {
+    flex: 2;
+}
+
+._after {
+    flex: 1;
+}
+
+.page6 .buttonbox {
+    /* position: absolute;
+    bottom: 2% !important; */
+    margin-top: 20rpx;
+}
+
+.page6 .tips {
+    /* position: absolute;
+    top: 70%; */
+    width: 750rpx;
+    height: 196rpx;
+    display: flex;
+    margin-top: 100rpx;
+}
+
+.page6 .tips .tipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/7-text1.png') no-repeat;
+     
+}
+
+.page6 .contentbox {
+    padding-bottom: 40rpx;
+}
+
+.page6 .contentbox .content {
+    margin-top: 20rpx;
+}
+
+.page6 .dot {
+    position: absolute;
+    top: 368rpx;
+    left: -80rpx;
+}
+
+.page7 {
+    width: 100%;
+}
+
+.page7 .radioBoxs {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20%;
+    width: 100%;
+}
+
+.page7 .radio {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 0 10rpx;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.page7 .radio>image {
+    width: 100%;
+}
+
+.page7 .radiobtn {
+    height: 70rpx;
+    position: absolute;
+    top: 527rpx;
+    right: 79rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page7 .radiobtn text {
+    font-size: 50rpx;
+}
+
+.page7 .radiobtn image {
+    position: absolute;
+    width: 200rpx;
+    height: 70rpx;
+    left: 0;
+}
+
+.page7 .title {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 4%;
+    display: block;
+    margin: auto;
+    width: 360rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 29rpx;
+    background: #00a9de;
+}
+
+.page7 .tips {
+    position: absolute;
+    top: 59.5%;
+    width: 750rpx;
+    height: 342rpx;
+    display: flex;
+    margin-top: 20rpx;
+}
+
+.page7 .tips .tipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    /* background: url('https://www.topsleep.net/static/8-text.png') no-repeat; */
+    background-repeat: no-repeat;
+}
+
+.page7 .radiobox {
+    padding: 0 35rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30rpx;
+    margin-top: 30rpx;
+    height: 630rpx;
+    margin-bottom: 40rpx;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.page7 .radio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.page7 .radio .dot {
+    margin: 0;
+}
+
+.page7 .radio text {
+    color: #fff;
+    margin-left: 15rpx;
+}
+
+
+
+.page7 .contentbox .content {
+    font-size: 26rpx;
+}
+
+.page7 .contentbox {
+    padding-bottom: 40rpx;
+}
+
+.page7 .contentbox .h1 {
+    margin-top: 25rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+.page7 .buttonbox {
+    position: absolute;
+    bottom: 0% !important;
+}
+
+.page8 {
+    padding: 0 35rpx;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 80rpx;
+}
+.page8 .title {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 4%;
+    display: block;
+    margin: auto;
+    width: 360rpx !important;
+    color: #fff !important;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 29rpx;
+    background: #00a9de;
+}
+
+.page8 .banner {
+    position: absolute;
+    top: 170rpx;
+    left: 20px;
+    /* width: 360rpx; */
+    width: 420rpx;
+}
+
+.page8 .banner .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.page8 .banner .point {
+    position: absolute;
+    display: flex;
+}
+
+.page8 .banner .point image {
+    width: 70rpx;
+}
+
+.page8 .banner .point1 {
+    top: 66rpx;
+    left: 90rpx;
+    width: 180rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point2 {
+    top: 85rpx;
+    left: 85rpx;
+    width: 195rpx;
+    z-index: 3;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point3 {
+    top: 45rpx;
+    left: 119rpx;
+    width: 120rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point4 {
+    top: 460rpx;
+    left: 105rpx;
+    width: 150rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point5 {
+    top: 290rpx;
+    left: 95rpx;
+    width: 175rpx;
+    z-index: 1;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .banner .point6 {
+    top: 215rpx;
+    left: 95rpx;
+    width: 175rpx;
+    z-index: 3;
+    display: none;
+    justify-content: space-between;
+}
+
+.page8 .contentbox .content {
+    font-size: 26rpx;
+}
+
+.page8 .contentbox {
+    padding-bottom: 40rpx;
+}
+
+.page8 .contentbox .h1 {
+    margin-top: 25rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+ 
+.page8 .subtitle {
+    display: block;
+    text-align: right;
+    font-size: 24rpx;
+    padding-right: 75rpx;
+    margin-top: 95rpx;
+    color: #fff;
+}
+
+.page8 .radiobox {
+    padding-right: 40rpx;
+    margin-bottom: 95rpx;
+}
+
+.page8 .radiobox .radio {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 494rpx;
+    align-items: center;
+    width: 30%;
+    text-align: right;
+    margin-top: 30rpx;
+    font-size: 28rpx;
+}
+
+.page8 .radio .dot {
+    margin-right: 20rpx;
+    margin-top: 0;
+    color: #FFF;
+}
+.page8 .radio text { 
+    color: #fdffff;
+}
+
+.page8 .line {
+    margin-top: 60rpx;
+}
+.page8 .buttonbox { 
+    margin-top: 35rpx; 
+}
+
+.page8 .tips  {
+    margin-top: 50rpx;
+    width: 680rpx;
+    height: 370rpx;
+    margin: 0 auto;
+    display: flex;
+}
+.page8 .tips .jjbutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/online/9-1-text.png') no-repeat;
+    /* background: url('https://www.topsleep.net/static/9-1-text.png') no-repeat; */
+}
+.page8 .tips .bybutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/online/9-3-text.png') no-repeat;
+    /* background: url('https://www.topsleep.net/static/9-3-text.png') no-repeat; */
+}
+ 
+.page8 .tips .tongbutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/online/9-5-text.png') no-repeat;
+    /* background: url('https://www.topsleep.net/static/9-5-text.png') no-repeat; */
+}
+.page8 .tips .tuibutipsPic {
+    width: 89%;
+    display: block;
+    margin: 0 auto;
+    background-size: contain !important;
+    background: url('http://risk.rfyfb.com/file/offLine/online/9-6-text.png') no-repeat;
+    /* background: url('https://www.topsleep.net/static/9-6-text.png') no-repeat; */
+}
+.page9 {
+    width: 100%;
+    padding: 0 35rpx;
+    box-sizing: border-box;
+}
+
+.page9 .banner {
+    width: 100%;
+    margin-top: 80rpx;
+    margin-bottom: 150rpx;
+}
+
+.page9 .page9-input {
+    position: absolute;
+    top: 400rpx;
+    right: 110rpx;
+    height: 110rpx;
+    width: 100rpx;
+    color: #fff;
+    text-align: center;
+    overflow: visible;
+}
+
+.page9 .page9-input:after {
+    content: 'cm';
+    position: absolute;
+    right: -45rpx;
+    top: 30rpx;
+    font-size: 18px;
+}
+
+.page9 .title {
+    position: absolute;
+    top: 320rpx;
+    right: 70rpx;
+    width: 160rpx;
+    color: #fff;
+}
+
+.page1 .buttonbox {
+    margin-top: 100rpx;
+}
+
+.page .buttonbox {
+    /* margin-top: 100rpx; */
+    margin-bottom: 50rpx;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.page .buttonbox .button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d0d0d;
+    padding-bottom: 10rpx;
+} 
+.page .buttonbox .button image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+} 
+.buttonbox {
+    color: #fff;
+} 
+.startBtn {
+    color: #fff;
+    padding: 5rpx 40rpx;
+    border-radius: 26rpx;
+    font-size: 32rpx;
+    background: #00a9de; 
+} 
+.choseSex {
+    position: absolute;
+    width: 340rpx;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 4%; 
+}
+.choseAge {
+    display: flex;
+    width: 290rpx;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto; 
+} 
+.page3 .buttonbox {
+    position: absolute;
+    bottom: 1px;
+}
+
+.page3 .buttonbox .text {
+    color: #fff;
+}

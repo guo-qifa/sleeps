@@ -1,0 +1,33 @@
+{
+  "name": "vue-manage-system",
+  "version": "4.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "element-ui": "^2.11.0",
+    "html2canvas": "*",
+    "jspdf": "^2.3.1",
+    "mavon-editor": "^2.6.17",
+    "nprogress": "^0.2.0",
+    "print-js": "^1.6.0",
+    "vue": "^2.6.10",
+    "vue-cropperjs": "^3.0.0",
+    "vue-json-excel": "^0.3.0",
+    "vue-print-nb-jeecg": "^1.0.9",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.0.7",
+    "vue-schart": "^2.0.0",
+    "vuedraggable": "^2.17.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

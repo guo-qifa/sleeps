@@ -1,0 +1,118 @@
+.userinfo-avatar {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    margin-top: 50rpx;
+}
+
+.changebox {
+    padding: 300rpx 35rpx 0 35rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 300rpx;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.changebox .wrap {
+    border-radius: 15rpx;
+    overflow: hidden;
+}
+
+.line {
+    height: 20rpx;
+    background-color: #f5f8fa;
+}
+
+.list {
+    line-height: 90rpx;
+    padding: 0px 5%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 3rpx solid #e5e5e5;
+    height: 90rpx;
+    background-color: #ffffff;
+    box-shadow: 0rpx 1rpx 0rpx 0rpx #f0f0f0;
+    color: #1a1a1a;
+    font-size: 28rpx;
+}
+
+.list image {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.list input {
+    padding-top: 25rpx;
+    padding-left: 25rpx;
+
+}
+
+.btnStyle {
+    background-image: linear-gradient(180deg,
+            #64bbf3 0%,
+            #4e78e8 100%),
+        linear-gradient(#26cdda,
+            #26cdda);
+    background-blend-mode: normal,
+        normal;
+    border-radius: 45 rpx;
+    letter-spacing: 5 rpx;
+    color: #ffffff;
+    font-size: 25 rpx;
+    margin-bottom: 20px;
+    float: left;
+    padding: 8px 10px;
+    width: 100px;
+    height: 40px;
+    font-weight: inherit;
+}
+
+.Btnlist {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    width: 100%;
+}
+
+.changebox .buttonbox {
+    margin-top: 80rpx;
+    margin-bottom: 50rpx;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.changebox .buttonbox .button {
+    width: 280rpx;
+    height: 80rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d0d0d;
+    padding-bottom: 10rpx;
+}
+
+.changebox .buttonbox .button image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

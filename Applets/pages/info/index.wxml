@@ -1,0 +1,100 @@
+<view class="container">
+    <image class='background' src="{{imgUrl}}/infoBg.png" mode="aspectFill"></image>
+    <image src="{{imgUrl}}/report.png" mode="aspectFill"
+           style="width: 150px;height: 150px;z-index: 2;padding-top: 35px;position: fixed"></image>
+    <view style="color: #008aff;z-index: 3;text-align: center;position: fixed;top: 60px">
+        <view style="font-size: 60rpx;margin-bottom: -10rpx;padding-top: 20px">
+            {{detail.hardnessGrade||'暂无'}}
+             级
+        </view>
+        <view class="">
+            床垫软硬度
+        </view>
+    </view>
+
+
+</view>
+<view class="line"></view>
+
+<view class="list">
+    <view class="tip_key">昵称</view>
+    <view class="tip_val">{{detail.nickname||'暂无'}}</view>
+
+
+</view>
+<view class="list">
+    <view class="tip_key">年龄段</view>
+    <view class="tip_val">{{detail.ageRange||'暂无'}}岁</view>
+
+
+</view>
+<view class="list">
+    <view class="tip_key">性别</view>
+    <view class="tip_val">{{detail.sex||'暂无'}}</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">身高</view>
+    <view class="tip_val">{{detail.height||'暂无'}}cm</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">体重</view>
+    <view class="tip_val">{{detail.weight||'暂无'}}kg</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">肩宽</view>
+    <view class="tip_val">{{detail.shoulderWidth||'暂无'}}cm</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">颈椎弧</view>
+    <view class="tip_val">{{detail.spineArc||'暂无'}}</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">BMI</view>
+    <view class="tip_val">{{detail.bmi||'暂无'}}</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">脊椎形态</view>
+    <view class="tip_val">{{detail.vertebralMorphology||'暂无'}}</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">
+        <view style="color: #008aff;margin-bottom: 10px">您平时的睡眠习惯是:</view>
+        <view>睡姿</view>
+
+    </view>
+    <view class="tip_val" style="margin-top: 30px">{{detail.sleepPosture||'暂无'}}</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">软硬度偏好</view>
+    <view class="tip_val">{{detail.softHardPreference||'暂无'}}</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">睡眠痛点</view>
+    <view class="tip_val">{{detail.sleepDiscomfort||'暂无'}}</view>
+
+</view>
+<view class="list">
+    <view class="tip_key">体验平台</view>
+    <view class="tip_val">{{detail.storeName||'暂无'}}</view>
+
+</view>
+<view class="list" style="margin-bottom: 20px" bindtap ="jumTable">
+    <view class="tip_key">查看历史</view>
+    <view>
+        <image  src="{{imgUrl}}/rightIcon.png" style="padding-bottom: 0px"></image>
+    </view>
+
+</view>
+
+
+
+

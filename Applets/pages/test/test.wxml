@@ -1,0 +1,521 @@
+<view class="container">
+    <camera class="camera" hidden="{{!camreaVisible}}" device-position="{{device?'front':'back'}}">
+        <cover-view class="controls">
+
+            <!-- <view class="cemian" ></view> -->
+            <cover-image class="close" bindtap="hideCamrea" src="../../images/indexbtn6.png" mode="widthFix">
+            </cover-image>
+            <cover-image class="changeOver" src="../../images/4-2again.png" bindtap="devicePosition" mode="widthFix">
+            </cover-image>
+            <cover-image class="takePhoto" src="../../images/4-2ok.png" bindtap="takePhoto" mode="widthFix">
+            </cover-image>
+            <cover-view class="imgMask">
+                <cover-image hidden="{{isFace}}" style="height100%" class="image" src="../../images/zhengmian.png"
+                    mode=""></cover-image>
+                <cover-image hidden="{{isSide}}" style="height100%" class="image" src="../../images/cemian.png" mode="">
+                </cover-image>
+                <cover-image hidden="{{showPhoto}}" style="height:100%" class="image _imgMask" src="{{photoSrc}}"
+                    mode="">
+                </cover-image>
+
+                <cover-view class='imgMaskBtn' hidden="{{showPhoto}}">
+                    <cover-view bindtap="reset1" data-index="1" hidden="{{ wich !=1 }}" class="cp">重拍</cover-view>
+                    <cover-view bindtap="confirm1" hidden="{{  wich !=1 }}" class="zmqr">正面照片确认</cover-view>
+                    <!-- <cover-view bindtap="showCamrea" data-index="2" hidden="{{ wich !=2 }}" class="cp">重拍</cover-view>
+                    <cover-view bindtap="uploadFileFu" hidden="{{  wich !=2 }}" class="zmqr">确认</cover-view> -->
+                    <cover-view bindtap="reset2" data-index="3" hidden="{{  wich != 3 }}" class="cp">重拍</cover-view>
+                    <cover-view bindtap="confirm2" hidden="{{ wich !=3 }}" class="zmqr">侧面照片确认</cover-view>
+                </cover-view>
+
+            </cover-view>
+        </cover-view>
+    </camera>
+    <!-- <image class="testbg" src="{{imgUrl}}/testbg.png"></image> -->
+    <!-- <image class="testbg-bottom" src="{{imgUrl}}/test_bottom.png" mode="widthFix"></image> -->
+    <!-- Page1 Start -->
+    <view class="page page1" hidden="{{currentPage != 1}}">
+        <swiper class="swiper" autoplay="{{true}}" bindchange="swiperChange">
+            <swiper-item>
+                <div class="swiper-image item1" mode="widthFix">
+                </div>
+            </swiper-item>
+            <swiper-item>
+                <div class="swiper-image item2" mode="widthFix">
+                </div>
+
+            </swiper-item>
+            <swiper-item>
+                <div class="swiper-image item3" mode="widthFix">
+                </div>
+
+            </swiper-item>
+            <swiper-item>
+                <div class="swiper-image item4" mode="widthFix">
+                </div>
+            </swiper-item>
+        </swiper>
+        <view class="dots">
+            <view class="dot {{currentSwiper == 0 ? 'current' : ''}}">
+                <view class="point"></view>
+            </view>
+            <view class="dot {{currentSwiper == 1 ? 'current' : ''}}">
+                <view class="point"></view>
+            </view>
+            <view class="dot {{currentSwiper == 2 ? 'current' : ''}}">
+                <view class="point"></view>
+            </view>
+            <view class="dot {{currentSwiper == 3 ? 'current' : ''}}">
+                <view class="point"></view>
+            </view>
+        </view>
+        <!-- <view class="logo">
+            <image src="{{imgUrl}}/logo_b.png" mode="widthFix"></image>
+        </view>
+        <view class="text">科技，让睡眠更懂你</view> -->
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpNext" data-index="1">
+                <!-- <image src="{{imgUrl}}/button.png"></image> -->
+                <text class="startBtn">开始检测</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page1 End -->
+    <!------------------------------------------------------------>
+    <!-- Page2 Start -->
+    <view class="page page2" hidden="{{currentPage != 2}}">
+        <text class="startBtn choseSex">请 选 择 您 的 性 别</text>
+        <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step1.png"></image>
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;" src="{{testImgUrl}}/logo.png"></image>
+        <view class="sexbox">
+
+            <view class="left" data-value="0" bindtap="bindSexChange">
+                <image hidden="{{sex == 0}}" style="width: 175rpx;height: 485rpx;" src="{{imgUrl}}/page2_1.png"></image>
+                <image hidden="{{sex != 0}}" src="{{imgUrl}}/page2_2.png"></image>
+                <text hidden="{{sex == 0}}" style="color: #8f929e;font-weight:700">男性</text>
+                <text hidden="{{sex != 0}}" style="color: #fff;font-weight:700">男性</text>
+                <view class="dot {{sex == 0 ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+            </view>
+            <view class="right" data-value="1" bindtap="bindSexChange">
+                <image hidden="{{sex != 1}}" src="{{imgUrl}}/page2_3.png"></image>
+                <image hidden="{{sex == 1}}" style="width: 120rpx;height: 490rpx;" src="{{imgUrl}}/page2_4.png"></image>
+                <text style="color: #8f929e;font-weight:700" hidden="{{sex == 1}}">女性</text>
+                <text style="color: #fff;font-weight:700" hidden="{{sex != 1}}">女性</text>
+                <view class="dot {{sex == 1 ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+            </view>
+        </view>
+        <text class="startBtn choseAge">请 输 入 您 的 年 龄</text>
+        <view class="agebox">
+            <text class="tip">年龄:</text>
+            <!-- <input class="age" type="text" value="{{age}}" bindinput="bindAgeChange" /> -->
+            <picker-view value="{{ defaultAge }}" indicator-style="height: 50rpx;" style="color: #fff;text-align: center;line-height:50rpx;font-size: 40rpx;width: 50px; height: 50rpx;"  bindchange="bindAgeChange">
+                <picker-view-column>
+                    <view wx:for="{{ ageList }}" wx:key="{{item}}">
+                        <text class="age">{{ item }}</text>
+                    </view>
+                </picker-view-column>
+            </picker-view>
+            <text class="after">岁</text>
+            <image class="agebox_img1" data-type="up" src="{{testImgUrl}}/arrow_up.png"></image>
+            <image class="agebox_img2" data-type="down" src="{{testImgUrl}}/arrow_down.png"></image>
+            <!-- <image class="agebox_img1" bindtap="clickAge" data-type="up" src="{{testImgUrl}}/arrow_up.png"></image>
+            <image class="agebox_img2" bindtap="clickAge" data-type="down" src="{{testImgUrl}}/arrow_down.png"></image> -->
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpPrev" data-index="2">
+                <text class="startBtn">上一步</text>
+            </view>
+            <view class="button" bindtap="jumpNext" data-index="2">
+                <text class="startBtn">下一步</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page2 End -->
+    <!------------------------------------------------------------>
+    <!-- Page3 Start -->
+    <view class="page page3" hidden="{{currentPage != 3}}">
+        <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step2.png"></image>
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;" src="{{testImgUrl}}/logo.png"></image>
+        <view wx:if="{{sex == 0}}" class="man">
+            <view class="manPic">
+            </view>
+        </view>
+        <view wx:if="{{sex == 1}}" class="woman">
+            <view class="womanPic">
+            </view>
+        </view>
+        <view class="tips">
+            <view class="tipsPic">
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="chooseImage" data-index="1">
+                <text class="startBtn text">选择背面照</text>
+            </view>
+            <view class="button" bindtap="showCamrea" data-index="2">
+                <text class="startBtn text take-photo">拍照</text>
+            </view>
+            <view class="button" bindtap="chooseImage" data-index="3">
+                <text class="startBtn text">选择侧面照</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page3 End -->
+    <!------------------------------------------------------------>
+    <!-- Page4 Start -->
+    <view class="page page4" hidden="{{currentPage != 4}}">
+        <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step3.png"></image>
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;" src="{{testImgUrl}}/logo.png"></image>
+        <view wx:if="{{sex == 0}}" class="man">
+            <view class="manPic">
+            </view>
+        </view>
+        <view wx:if="{{sex == 1}}" class="woman">
+            <view class="womanPic">
+            </view>
+        </view>
+
+        <view class="tips">
+            <view class="tipsPic">
+            </view>
+        </view>
+
+
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpPrev" data-index="4">
+                <text class="startBtn">重拍照片</text>
+            </view>
+            <view class="button" bindtap="jumpNext" data-index="4">
+                <text class="startBtn">下一步</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page4 End -->
+    <!------------------------------------------------------------>
+    <!-- Page5 Start -->
+    <view class="page page5" hidden="{{currentPage != 5}}">
+        <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step4.png"></image>
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;" src="{{testImgUrl}}/logo.png"></image>
+        <view class="inputbox">
+            <image class="banner" wx:if="{{sex == 1}}" src="{{imgUrl}}/page5_1.png"></image>
+            <image class="banner" wx:if="{{sex == 0}}" src="{{imgUrl}}/page5_4.png"></image>
+            <text class="title">请 输 入 您 的 身 高 体 重</text>
+            <view class="input input1">
+                <text class="text">身高:</text>
+                <!-- <input value="{{input.sg}}" maxlength="6" data-key="sg" bindinput="bindKeyInput" /> -->
+                <picker-view value="{{ defaultSg }}" indicator-style="height: 50rpx;" style="color: #fff;text-align: center;line-height:50rpx;font-size: 40rpx;width: 50px; height: 50rpx;position:absolute;bottom:0;"  bindchange="bindSgTzChange" data-key="sg">
+                    <picker-view-column>
+                        <view wx:for="{{ sgList }}" wx:key="{{item}}">
+                            <text class="age" style="animation: changeColor 1s linear infinite;;display: inline;color: #fff">{{ item }}</text>
+                        </view>
+                    </picker-view-column>
+                </picker-view>
+                <text class="unit">cm</text>
+                <image style="width:380rpx" src="../../images/6-kuang1.png" mode="widthFix"></image>
+            </view>
+            <view class="input input2">
+                <text class="text">体重:</text>
+                <!-- <input value="{{input.tz}}" maxlength="5" data-key="tz" bindinput="bindKeyInput" /> -->
+                <picker-view value="{{ defaultTz }}" indicator-style="height: 50rpx;" style="color: #fff;text-align: center;line-height:50rpx;font-size: 40rpx;width: 50px; height: 50rpx;position:absolute;bottom:0;"  bindchange="bindSgTzChange" data-key="tz">
+                    <picker-view-column>
+                        <view wx:for="{{ tzList }}" wx:key="{{item}}">
+                            <text class="age" style="animation: changeColor 1s linear infinite;display: inline;color: #fff">{{ item }}</text>
+                        </view>
+                    </picker-view-column>
+                </picker-view>
+                <text class="unit">kg</text>
+                <image style="width:380rpx" src="../../images/6-kuang1.png" mode="widthFix"></image>
+            </view>
+            <view class="input input3">
+                <view class="bmitext">
+                    BMI系数:
+                </view>
+                <view class="bmi">{{bmi}}</view>
+                <text class="bmiinfo" decode='true'>BMI参考:偏瘦：&lt;18.5 正常:18.5-23.9 偏胖:24-27.9</text>
+                <image style="width:450rpx" src="../../images/6-kuang1.png" mode="widthFix"></image>
+            </view>
+        </view>
+        <view class="tips">
+            <view class="tipsPic">
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpPrev" data-index="5">
+                <text class="startBtn">上一步</text>
+            </view>
+            <view class="button" bindtap="jumpNext" data-index="5">
+                <text class="startBtn">下一步</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page5 End -->
+    <!------------------------------------------------------------>
+    <!-- Page6 Start -->
+    <view class="page page6" hidden="{{currentPage != 6}}">
+        <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step5.png"></image>
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;" src="{{testImgUrl}}/logo.png"></image>
+        <text class="title">您 平 时 习 惯 的 睡 眠 姿 势</text>
+        <view class="radioBoxs">
+            <view class="radio" bindtap="setPage6Current" data-index="1">
+                <image hidden="{{currentPage6Index != 1}}" src="https://www.topsleep.net/static/7-1-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage6Index == 1}}" src="https://www.topsleep.net/static/7-1-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage6Index == 1 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="radio" bindtap="setPage6Current" data-index="2">
+                <image hidden="{{currentPage6Index != 2}}" src="https://www.topsleep.net/static/7-2-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage6Index == 2}}" src="https://www.topsleep.net/static/7-2-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage6Index == 2 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="radio" bindtap="setPage6Current" data-index="3">
+                <image hidden="{{currentPage6Index != 3}}" src="https://www.topsleep.net/static/7-3-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage6Index == 3}}" src="https://www.topsleep.net/static/7-3-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage6Index == 3 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <text class="title title2">您 对 床 垫 的 软 硬 偏 好 为</text>
+        <view class="rangeBox">
+            <slider min="1" max="3" activeColor="#fff" style="width: 90%; margin: 0 auto;" bindchange="setBedType"></slider>
+            <view style="width: 100%;display: flex;">
+                <view style="width: 20%;text-align: center;color: #fff">偏软</view>
+                <view style="width: 60%;text-align: center;color: #fff">适中</view>
+                <view style="width: 20%;text-align: center;color: #fff">偏硬</view>
+            </view>
+            <!-- <view class="line" style="display: none">
+                <view class="_front lineType" bindtap="setBedType" data-index="1">
+                    <view class="liness" bindtap="setBedType" data-index="1">
+                    </view>
+                    <view class="_light" bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' hidden="{{bedTypeIndex != 1}}" bindtap="setBedType" data-index="1">
+                    </view>
+                    <text class="textName" bindtap="setBedType" data-index="1">偏软</text>
+                </view>
+                <view class="_mid lineType" bindtap="setBedType" data-index="2">
+                    <view class="liness" bindtap="setBedType" data-index="2">
+                    </view>
+                    <view class="_light" bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' hidden="{{bedTypeIndex != 2}}" bindtap="setBedType" data-index="2">
+                    </view>
+                    <text class="textName" bindtap="setBedType" data-index="2">适中</text>
+                </view>
+                <view class="_after lineType" bindtap="setBedType" data-index="3">
+                    <view class="liness" bindtap="setBedType" data-index="3">
+                    </view>
+                    <view class="_light" bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' hidden="{{bedTypeIndex != 3}}" bindtap="setBedType" data-index="3">
+                    </view>
+                    <text class="textName" bindtap="setBedType" data-index="3">偏硬</text>
+                </view>
+            </view> -->
+        </view>
+        <view class="tips">
+            <view class="tipsPic">
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpPrev" data-index="6">
+                <text class="startBtn">上一步</text>
+            </view>
+            <view class="button" bindtap="jumpNext" data-index="6">
+                <text class="startBtn">下一步</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page6 End -->
+    <!------------------------------------------------------------>
+    <!-- Page7 Start -->
+    <view class="page page7" hidden="{{currentPage != 7}}">
+        <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step6.png"></image>
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;" src="{{testImgUrl}}/logo.png"></image>
+        <text class="title">您 的 体 型 为</text>
+        <view class="radioBoxs">
+            <view class="radio" bindtap="setPage7Current" data-index="1">
+                <image hidden="{{currentPage7Index != 1}}" src="https://www.topsleep.net/static/8-1-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage7Index == 1}}" src="https://www.topsleep.net/static/8-1-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage7Index == 1 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="radio" bindtap="setPage7Current" data-index="2">
+                <image hidden="{{currentPage7Index != 2}}" src="https://www.topsleep.net/static/8-2-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage7Index == 2}}" src="https://www.topsleep.net/static/8-2-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage7Index == 2 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="radio" bindtap="setPage7Current" data-index="3">
+                <image hidden="{{currentPage7Index != 3}}" src="https://www.topsleep.net/static/8-3-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage7Index == 3}}" src="https://www.topsleep.net/static/8-3-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage7Index == 3 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="radio" bindtap="setPage7Current" data-index="4">
+                <image hidden="{{currentPage7Index != 4}}" src="https://www.topsleep.net/static/8-4-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage7Index == 4}}" src="https://www.topsleep.net/static/8-4-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage7Index == 4 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tips">
+            <view class="tipsPic" style="background-image: url({{page7TextImageUrl}})">
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpPrev" data-index="7">
+                <text class="startBtn">上一步</text>
+            </view>
+            <view class="button" bindtap="jumpNext" data-index="7">
+                <text class="startBtn">下一步</text>
+            </view>
+        </view>
+
+    </view>
+    <!-- Page7 End -->
+    <!------------------------------------------------------------>
+    <!-- Page8 Start -->
+    <view class="page page8" hidden="{{currentPage != 8}}">
+        <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step7.png"></image>
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;top: {{page8Height}}px" src="{{testImgUrl}}/logo.png"></image>
+        <text class="title">您 平 时 睡 醒 后
+            有 哪 些 部 位 感 觉 不 适</text>
+        <view class="banner">
+            <image wx:if="{{currentPage8Index[7]}}" class="body" src="https://www.topsleep.net/static/9-7.png"
+                mode="widthFix"></image>
+            <image wx:if="{{!currentPage8Index[7]}}" class="body" src="https://www.topsleep.net/static/9-7.png"
+            mode="widthFix"></image>
+            <!-- <image
+                wx:if="{{ !currentPage8Index[1] && !currentPage8Index[2] && !currentPage8Index[3] && !currentPage8Index[4] &&  !currentPage8Index[5] && !currentPage8Index[5]  && !currentPage8Index[6]  && !currentPage8Index[7]}}"
+                class="body" src="https://www.topsleep.net/static/9-7.png" mode="widthFix"></image> -->
+            <block class="banner" wx:for="{{ currentPage8Index }}" wx:key="currentPage8Index + {{ index }}">
+                <image wx:if="{{ item }}" class="body" src="{{testImgUrl}}/9-{{index}}.png"
+                    mode="widthFix"></image>
+            </block>
+        </view>
+        <!-- <text class="title">选择睡眠不适部位</text> -->
+        <text class="subtitle">( 可 多 选 )</text>
+        <view class="radiobox">
+            <view class="radio" bindtap="setPage8Current" data-index="2">
+                <view class="dot {{currentPage8Index[2] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text>肩部</text>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="1">
+                <view class="dot {{currentPage8Index[1] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text>颈部</text>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="3">
+                <view class="dot {{currentPage8Index[3] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text>背部</text>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="4">
+                <view class="dot {{currentPage8Index[4] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text>腰部</text>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="5">
+                <view class="dot {{currentPage8Index[5] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text>臀部</text>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="6">
+                <view class="dot {{currentPage8Index[6] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text>腿部</text>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="7">
+                <view class="dot {{currentPage8Index[7] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text>无不适</text>
+            </view>
+        </view> 
+        <view class="tips" wx:if="{{ !currentPage8Index[1] && !currentPage8Index[2] && !currentPage8Index[3] && !currentPage8Index[4] &&  !currentPage8Index[5] && !currentPage8Index[5]  && !currentPage8Index[6]}}">
+           
+        </view>
+        <view class="tips" wx:if="{{ currentPage8Index[2] || currentPage8Index[1] }}">
+            <view class="jjbutipsPic">
+            </view>
+        </view>
+        <view class="tips" wx:if="{{ currentPage8Index[3] || currentPage8Index[4] }}">
+            <view class="bybutipsPic">
+            </view>
+        </view>
+
+        <view class="tips" wx:if="{{currentPage8Index[5]}}">
+            <view class="tongbutipsPic">
+            </view>
+        </view>
+
+        <view class="tips" wx:if="{{currentPage8Index[6]}}">
+            <view class="tuibutipsPic">
+            </view>
+        </view>
+
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpPrev" data-index="8">
+                <text class="startBtn">上一步</text>
+            </view>
+            <view class="button" bindtap="finish" data-index="8">
+                <text class="startBtn">提交</text>
+            </view>
+        </view>
+
+    </view>
+    <!-- Page8 End -->
+    <!------------------------------------------------------------>
+    <!-- Page9 Start -->
+    <!-- <view class="page page9" hidden="{{currentPage != 9}}">
+        <image class="banner" src="{{imgUrl}}/page9_1.png" mode="widthFix"></image>
+        <text class="title">一拳高度</text>
+        <input type="text" class="page9-input" maxlength="3" data-key="yqgd" bindinput="bindKeyInput" />
+        <view class="buttonbox">
+            <view class="button" bindtap="finish">
+                <image src="{{imgUrl}}/button.png"></image>
+                <text>下一步</text>
+            </view>
+        </view>
+    </view> -->
+</view>

@@ -1,0 +1,144 @@
+{
+  "pages": [ 
+    {
+      "path": "pages/login",
+      "style": {"navigationBarTitleText": "登录","app-plus":{
+
+       "titleNView":false
+
+       }}
+    },
+	{
+	  "path": "pages/home",
+	"style": {"navigationBarTitleText": "登录","app-plus":{
+	
+	 "titleNView":false
+	
+	 }}
+	 
+	},
+	{
+	  "path": "pages/info",
+	 "style": {
+	            "navigationBarTextStyle": "white",
+	            "navigationBarBackgroundColor": "rgba(0,0,0,0)",
+	            "app-plus": {
+	                "titleNView": {
+	                    "type": "float",
+	                    "titleText": "会员信息"
+							
+	                }
+	            },
+				 "enablePullDownRefresh": true
+	        }
+	},
+	// 会员信息详情
+	{
+	  "path": "pages/userDetails",
+	 "style": {
+	            "navigationBarTextStyle": "white",
+	            "navigationBarBackgroundColor": "rgba(0,0,0,0)",
+	            "app-plus": {
+	                "titleNView": {
+	                    "type": "float",
+	                    "titleText": "会员详情"
+							
+	                }
+	            }
+	        }
+	},
+	{
+	  "path": "pages/personal",
+	   "style": {
+	              "navigationBarTextStyle": "white",
+	              "navigationBarBackgroundColor": "rgba(0,0,0,0)",
+	              "app-plus": {
+	                  "titleNView": {
+	                      "type": "float",
+	                      "titleText": "个人信息"
+	                  }
+	              }
+	          }
+	 
+	},
+	{
+	  "path": "pages/changPas",
+	     "style": {
+	                "navigationBarTextStyle": "white",
+	                "navigationBarBackgroundColor": "rgba(0,0,0,0)",
+	                "app-plus": {
+	                    "titleNView": {
+	                        "type": "float",
+	                        "titleText": "修改密码"
+	                    }
+	                }
+	            }
+	 
+	},
+	{
+	  "path": "pages/report",
+	 "style": {
+	            "navigationBarTextStyle": "white",
+	            "navigationBarBackgroundColor": "rgba(0,0,0,0)",
+	            "app-plus": {
+	                "titleNView": {
+	                    "type": "float",
+	                    "titleText": "会员报告"
+	                }
+	            },
+				 "enablePullDownRefresh": true
+	        }
+	},
+	{
+	  "path": "pages/reportDetails",
+	 "style": {
+	            "navigationBarTextStyle": "white",
+	            "navigationBarBackgroundColor": "rgba(0,0,0,0)",
+	            "app-plus": {
+	                "titleNView": {
+	                    "type": "float",
+	                    "titleText": "会员睡眠质量报告"
+	                }
+	            }
+	        }
+	}
+	
+  
+  ],
+  // 分包加载：此配置在微信小程序里为分包加载，在5+App里始终为整包
+  "subPackages": [
+    // 用户登录注册修改忘记密码页面
+    {
+      "root": "pages/user",
+      "pages": [
+   
+       
+     
+        {
+          "path": "modify/modify",
+          "style": {
+            "navigationBarTitleText": "密码修改"
+          }
+        },
+        {
+          "path": "forgot/forgot",
+          "style": {
+            "navigationBarTitleText": "忘记密码"
+          }
+        },
+        {
+          "path": "info/info",
+          "style": {
+            "navigationBarTitleText": "信息设置"
+          }
+        }
+      ]
+    }
+  ],
+  // 全局bar样式
+  "globalStyle": {
+	"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#0faeff",
+		"backgroundColor": "#007aff"
+  }
+}

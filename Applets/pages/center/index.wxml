@@ -1,0 +1,21 @@
+<view class="center-box">
+    <image class='background' src="{{imgUrl}}/centerbg.png" mode="aspectFill"></image>
+    <view class="topBg">
+        <block>
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+        </block>
+    </view>
+    <view class="list " bindtap="jumForm">
+        <view>个人信息</view>
+        <view>
+            <image src="{{imgUrl}}/rightIcon.png"></image>
+        </view>
+    </view>
+    <view class="list" bindtap="jumTable">
+        <view>体检记录</view>
+        <view>
+            <image src="{{imgUrl}}/rightIcon.png"></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="list-box">
+    <image class='background' src="{{imgUrl}}/index_bottom.png" mode="widthFix"></image>
+    <view class="logo">
+        <image src="{{imgUrl}}/report_1.png" mode="widthFix"></image>
+    </view>
+    <scroll-view scroll-y="true" class="scroll-view" enhanced="{{true}}">
+        <view class="item" wx:for="{{lists}}" wx:for-item="item" catchtap="jumInfo" data-item="{{item}}">
+            <view class="time">{{item.createTime}}</view>
+            <view class="typebox">
+                <view class="type">
+                    <text>适合枕头款式</text>
+                    <text class="value">{{item.pillowName}}</text>
+                </view>
+                <view class="type" style="margin-right: 15rpx;">
+                    <text>适合床垫等级</text>
+                    <text class="value">{{item.hardnessGrade}}级</text>
+                </view>
+                <image src="{{imgUrl}}/rightIcon.png"></image>
+            </view>
+        </view>
+        <!-- <view class="item">
+            <text class="emptytext">暂无报告</text>
+        </view> -->
+    </scroll-view>
+    <view class="text">科技，让睡眠更懂您</view>
+</view>

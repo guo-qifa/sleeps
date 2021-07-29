@@ -1,0 +1,51 @@
+{
+    
+    "cloud": true,
+ 
+      
+ 
+    "pages": [
+        "pages/index/index",
+        "pages/test/test",
+        "pages/report/report",
+        "pages/offLine/test",
+      
+       
+ 
+       
+       
+        "pages/change/index",
+        
+        "pages/list/list",
+        "pages/center/index",
+        
+        "pages/outUrl/outUrl",
+        "pages/info/index",
+        "pages/logs/logs",
+        "pages/table/index"
+      
+    ],
+    "navigateToMiniProgramAppIdList": [
+      "wxc3136cbda90bd738",
+      "wxba8276186897152d"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f5f8fa",
+        "navigationBarTitleText": "深睡密码",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json", 
+    "usingComponents": {
+        "i-rate": "./dist/rate/index",
+        "i-progress": "./dist/progress/index"
+    },
+    "plugins": {
+        "WechatSI": {                     
+          "version": "0.3.4",             
+          "provider": "wx069ba97219f66d99"  
+        }
+    }
+  
+}

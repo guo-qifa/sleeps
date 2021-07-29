@@ -1,0 +1,765 @@
+<view class="container">
+    <camera class="camera" hidden="{{!camreaVisible}}" device-position="{{device?'front':'back'}}">
+        <cover-view class="controls">
+            <!-- <view class="cemian" ></view> -->
+            <cover-image class="close" bindtap="hideCamrea" src="../../images/indexbtn6.png" mode="widthFix">
+            </cover-image>
+            <cover-image class="changeOver" src="../../images/4-2again.png" bindtap="devicePosition" mode="widthFix">
+            </cover-image>
+            <cover-image class="takePhoto" src="../../images/4-2ok.png" bindtap="takePhoto" mode="widthFix">
+            </cover-image>
+            <cover-view class="imgMask">
+                <cover-image hidden="{{isFace}}" style="height100%" class="image" src="../../images/zhengmian.png"
+                    mode=""></cover-image>
+                <cover-image hidden="{{isSide}}" style="height100%" class="image" src="../../images/cemian.png" mode="">
+                </cover-image>
+                <cover-image hidden="{{showPhoto}}" style="height:100%" class="image _imgMask" src="{{photoSrc}}"
+                    mode="">
+                </cover-image>
+
+                <cover-view class='imgMaskBtn' hidden="{{showPhoto}}">
+                    <cover-view bindtap="showCamrea" data-index="1" hidden="{{ wich !=1 }}" class="cp">重拍</cover-view>
+                    <cover-view bindtap="uploadFileFu" hidden="{{  wich !=1 }}" class="zmqr">正面确认</cover-view>
+                    <cover-view bindtap="showCamrea" data-index="1" hidden="{{ wich !=2 }}" class="cp">重拍</cover-view>
+                    <cover-view bindtap="uploadFileFu" hidden="{{  wich !=2 }}" class="zmqr">确认</cover-view>
+                    <cover-view bindtap="showCamrea" data-index="3" hidden="{{  wich != 3 }}" class="cp">重拍</cover-view>
+                    <cover-view bindtap="uploadFileFu" hidden="{{ wich !=3 }}" class="zmqr">侧面确认</cover-view>
+                </cover-view>
+
+            </cover-view>
+        </cover-view>
+    </camera>
+    <view class="comon_head">
+        <view class="offLine_logo">
+        </view>
+        <view class="step_point">
+            <text bindtap="jump" data-index="1" class="{{currentPage == 1 ? 'active' : ''}}">1</text>
+            <text bindtap="jump" data-index="2" class="{{currentPage == 2 ? 'active' : ''}}">2</text>
+            <text bindtap="jump" data-index="3" class="{{currentPage == 3 ? 'active' : ''}}">3</text>
+            <text bindtap="jump" data-index="4" class="{{currentPage == 4 ? 'active' : ''}}">4</text>
+            <text bindtap="jump" data-index="5" class="{{currentPage == 5 ? 'active' : ''}}">5</text>
+            <text bindtap="jump" data-index="6" class="{{currentPage == 6 ? 'active' : ''}}">6</text>
+            <text bindtap="jump" data-index="7" class="{{currentPage == 7 ? 'active' : ''}}">7</text>
+            <text bindtap="jump" data-index="8" class="{{currentPage == 8 ? 'active' : ''}}">8</text>
+            <text bindtap="jump" data-index="9" class="{{currentPage == 9 ? 'active' : ''}}">9</text>
+            <text bindtap="jump" data-index="10" class="{{currentPage == 10 ? 'active' : ''}}">10</text>
+            <text bindtap="jump" data-index="11" class="{{currentPage == 11 ? 'active' : ''}}">11</text>
+            <text style="background: transparent"></text>
+        </view>
+    </view>
+    <view class="page page1" hidden="{{currentPage != 1}}">
+        <view class="page1Tip">
+        </view>
+        <swiper class="swiper" autoplay="{{false}}" current='{{current}}' bindchange="swiperChange">
+            <block wx:for="{{userList}}" wx:key="*this">
+                <swiper-item>
+                    <div class="swiper-image item1" mode="widthFix">
+                        <view class="_items _left">
+                        </view>
+                        <view class="_items _right">
+                            <view class="rightItem one">
+                                <view class="oneItem ">
+                                    <text class="_name">{{item.name}}</text><text class="_post">{{item.post}}</text>
+                                </view>
+                                <view class="oneItem">
+                                    <text class="_des">{{item.des}}</text>
+                                </view>
+                            </view>
+                            <view class="rightItem two">
+                                <view class="twoItem">
+                                    <text class="_base">基础素质:</text>
+                                    <i-rate bind:change="onChange1" value="{{item.jichusuzhi}}" size="15">
+                                    </i-rate>
+                                </view>
+                                <view class="twoItem ">
+                                    <text class="_base">专业度:</text><text class="star"></text>
+                                    <i-rate bind:change="onChange1" value="{{item.zhuanyedu}}" size="15">
+                                    </i-rate>
+                                </view>
+                                <view class="twoItem ">
+                                    <text class="_base">客户满意度:</text><text class="star"></text>
+                                    <i-rate bind:change="onChange1" value="{{item.manyidu}}" size="15">
+                                    </i-rate>
+                                </view>
+                            </view>
+                            <view class="rightItem three">
+                                <view class="threeItem  years">
+                                    <view class="threeItem  years">
+                                        从业经验: <text class="star">{{item.congyejingyan}}</text>
+                                    </view>
+                                </view>
+                                <view class="threeItem  userSay">
+                                    <view class="threeItem  years">
+                                        客户评价:
+                                    </view>
+                                    <view class="userSayBox">
+                                        <block wx:for="{{item.pingjia}}" wx:for-item="i" wx:key="*this">
+                                            <text class="star">{{i}}</text>
+                                        </block>
+                                    </view>
+                                </view>
+                                <view class="threeItem  tags">
+                                    所获荣誉：
+                                </view>
+                                <view class="threeItem  hasGot">
+                                    <view class="hasGot1">
+                                        <view class="gots Got1"></view>
+                                        <view class="gotDes">{{item.rongyu}}</view>
+                                    </view>
+                                    <view class="hasGot1">
+                                        <view class="gots Got2"></view>
+                                        <view class="gotDes">{{item.paiming}}</view>
+                                    </view>
+                                </view>
+                            </view>
+
+                        </view>
+                    </div>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="dots">
+            <block wx:for="{{userList}}" wx:key="*">
+                <view class="dot {{index == currentSwiper ? ' current' : ''}}"></view>
+            </block>
+        </view>
+
+        <view class='bottom'>
+            <view class='btn-left' bindtap='prev'>
+                <image src='https://www.topsleep.net/static/10-zuo.png'></image>
+            </view>
+            <view class='btn-right' bindtap='next'>
+                <image src='https://www.topsleep.net/static/10-you.png'></image>
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpNext" data-index="1">
+                <!-- <image src="{{imgUrl}}/button.png"></image> -->
+                <text class="startBtn star04">下一步</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page1 End -->
+    <!------------------------------------------------------------>
+    <!-- Page2 Start -->
+    <view class="page page2" hidden="{{currentPage != 2}}">
+        <view class="page1Tip">
+        </view>
+        <view class="codeBox">
+            <view class="item codeBox1LeftCode">
+                <image class="banner" src="http://risk.rfyfb.com/file/offLine/2-gongzhonghao.png">
+                </image>
+            </view>
+            <view class="item codeBox1RightCon">
+                <view class="con con1">
+                    <text class="_index index1">1</text>
+                    <text class="_con">扫描左侧二维码，关注微信公众号。</text>
+                </view>
+                <view class="con con2">
+                    <text class="_index index2">2</text>
+                    <text class="_con">在微信公众号底部下拉菜单中，选择立即体验，进入小程序；</text>
+                </view>
+            </view>
+        </view>
+        <view class="codeBox" style="margin-top:60rpx">
+            <view class="item codeBox1RightCon">
+                <view class="con con1" style="margin-bottom:10rpx">
+                    <text class="_index index3">3</text>
+                    <text class="_con">在小程序中点击【扫码开启线下测试】扫一扫，扫描右侧二维码，开始神奇体验之旅；</text>
+                </view>
+                <view class="con con2">
+                    <text class="_index index4">4</text>
+                    <text class="_con">体验结束后，您可以选择打印报告或在公众号小程序中找到您的专属报告。</text>
+                </view>
+            </view>
+            <view class="item codeBox1LeftCode" style="justify-content: flex-end">
+                <image class="banner" src="http://risk.rfyfb.com/file/offLine/2-xiaochengxu.png">
+                </image>
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpPrev" data-index="2">
+                <text class="startBtn">返回上页</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page2 End -->
+    <!------------------------------------------------------------>
+    <!-- Page3 Start -->
+    <view class="page page3" hidden="{{currentPage != 3}}">
+        <view class="page1Tip">
+        </view>
+        <view class="manPic">
+        </view>
+        <view class="stand">
+            <view class="shbox">
+            </view>
+        </view>
+        <view class="_loading">
+            {{page3Tip}}
+        </view>
+        <view class="_result">
+            <text style="margin-left:5rpx">身 高 :</text>
+            <text class="_values _height">{{ gotHeight }}</text>
+            <text>CM</text>
+        </view>
+        <view class="_result">
+            <text>体 重 :</text>
+            <text class="_values _weight">{{gotWeight}}</text>
+            <text>KG</text>
+        </view>
+
+    </view>
+    <!-- Page3 End -->
+    <!------------------------------------------------------------>
+    <!-- Page4 Start -->
+    <view class="page page4" hidden="{{currentPage != 4}}">
+        <view class="page1Tip">
+        </view>
+        <view wx:if="{{sex == 0}}" class="man">
+            <view class="manPic">
+            </view>
+        </view>
+        <view wx:if="{{sex == 1}}" class="woman">
+            <view class="womanPic">
+            </view>
+        </view>
+        <view class="pos">
+            <view class="_left">
+            </view>
+            <view class="_right">
+            </view>
+        </view>
+        <view class="backIcon" data-index="3" bindtap="jumpBack"></view>
+    </view>
+    <!-- Page4 End -->
+    <!------------------------------------------------------------>
+    <!-- Page5 Start -->
+    <view class="page page5" hidden="{{currentPage != 5}}">
+        <view class="page1Tip">
+        </view>
+        <view class="inputbox">
+            <image class="banner" wx:if="{{sex == 1}}" src="http://risk.rfyfb.com/file/offLine/5-gif-man.gif"></image>
+            <image class="banner" wx:if="{{sex == 0}}" src="http://risk.rfyfb.com/file/offLine/5-gif-woman.gif"></image>
+            <text wx:if="{{readyFlag}}" class="_ready">准备</text>
+            <text wx:if="{{readyFlag}}" class="_num">{{ _num }}</text>
+            <text wx:if="{{!readyFlag}}" class="_start">开始</text>
+        </view>
+    </view>
+    <!-- Page5 End -->
+    <!------------------------------------------------------------>
+    <!-- Page6 Start -->
+    <view class="page page6" hidden="{{currentPage != 6 || !saomiaoResult}}">
+        <view class="outBg">
+            <view class="_mode _mode1">
+                <image src="http://risk.rfyfb.com/file/offLine/6-moxing.png" mode="widthFix"></image>
+            </view>
+        </view>
+        <view class="outBg">
+            <view class="_mode  _mode2">
+                <image src="http://risk.rfyfb.com/file/offLine/6-moxing2.png" mode="widthFix"></image>
+            </view>
+        </view>
+        <text wx:if="{{saomiao}}">正 在 扫 描 ({{times}}s) </text>
+        <text wx:if="{{!saomiao}}">扫 描 结 束</text>
+        <view class="progressBox">
+            <i-progress percent="{{percent}}" style="width:70" stroke-width="25" status="active"></i-progress>
+        </view>
+        <view class="backIcon" data-index="5" bindtap="jumpBack"></view>
+    </view>
+    <view class="page page6" hidden="{{currentPage != 6 || saomiaoResult}}">
+        <view class="outBg">
+            <view class="_mode _mode3">
+                <image src="http://risk.rfyfb.com/file/offLine/6-moxing.png" mode="widthFix"></image>
+            </view>
+        </view>
+        <view class="outBg">
+            <view class="_mode _mode4">
+                <image src="http://risk.rfyfb.com/file/offLine/6-moxing3.png" mode="widthFix"></image>
+
+            </view>
+        </view>
+        <text>数 据 计 算 中 ...</text>
+        <view class="loadings">
+
+        </view>
+        <view class="backIcon" data-index="5" bindtap="jumpBack"></view>
+    </view>
+    <!-- Page6 End -->
+    <!------------------------------------------------------------>
+    <!-- Page7 Start -->
+    <view class="page page7" hidden="{{currentPage != 7 || hasResult}}">
+        <view class="outBg">
+            <view class="_mode"></view>
+        </view>
+        <view class="outBg">
+            <view class="_analysis"></view>
+        </view>
+        <text>数 据 计 算 中.</text>
+        <view class="loadings">
+        </view>
+    </view>
+    <view class="page page7" hidden="{{currentPage != 7 || !hasResult}}">
+        <view class="resultBox">
+        </view>
+        <view class="_personOut">
+            <view class="_person"></view>
+            <text class="_finishText">数 据 计 算 完 成</text>
+        </view>
+        <view class="textWord">
+            为 了 更 好 的 了 解 您 的 睡 眠 习 惯，请 继 续 回 答 以 下 问 题
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jump" data-index="8">
+                <text class="startBtn">下一步</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page7 End -->
+    <!------------------------------------------------------------>
+    <!-- Page8 Start -->
+    <view class="page page8" hidden="{{currentPage != 8}}">
+
+        <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;"
+            src="{{testImgUrl}}/logo.png"></image>
+        <text class="title">您 平 时 习 惯 的 睡 眠 姿 势</text>
+        <view class="radioBoxs">
+            <view class="radio" bindtap="setPage8Current" data-index="1">
+                <image hidden="{{currentPage8Index != 1}}" src="https://www.topsleep.net/static/7-1-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage8Index == 1}}" src="https://www.topsleep.net/static/7-1-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage8Index == 1 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="2">
+                <image hidden="{{currentPage8Index != 2}}" src="https://www.topsleep.net/static/7-2-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage8Index == 2}}" src="https://www.topsleep.net/static/7-2-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage8Index == 2 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="radio" bindtap="setPage8Current" data-index="3">
+                <image hidden="{{currentPage8Index != 3}}" src="https://www.topsleep.net/static/7-3-1.png"
+                    mode="widthFix"></image>
+                <image hidden="{{currentPage8Index == 3}}" src="https://www.topsleep.net/static/7-3-2.png"
+                    mode="widthFix"></image>
+                <view class="radiobtn">
+                    <view class="dot {{currentPage8Index == 3 ? 'current' : ''}}">
+                        <view class="point"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tips">
+            <view class="tipsPic">
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jump" data-index="9">
+                <text class="startBtn">下一步</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- Page8 End -->
+    <!------------------------------------------------------------>
+    <!-- Page9 Start -->
+
+    <view class="page page9" hidden="{{currentPage != 9}}">
+        <text class="title">您 平 时 睡 醒 后 有 哪 些 部 位 感 觉 不 适</text><text class="_much">（可多选）</text>
+        <view class="banner">
+            <image wx:if="{{currentPage9Index[7]}}" class="body" src="https://www.topsleep.net/static/9-7.png"
+                mode="widthFix"></image>
+            <image wx:if="{{!currentPage9Index[7]}}" class="body" src="https://www.topsleep.net/static/9-7.png"
+                mode="widthFix"></image>
+
+            <block class="banner" wx:for="{{ currentPage9Index }}" wx:key="currentPage9Index + {{ index }}">
+                <image wx:if="{{ item }}" class="body" src="{{testImgUrl}}/9-{{index}}.png" mode="widthFix"></image>
+            </block>
+
+        </view>
+
+        <view class="radiobox">
+            <view class="radio" bindtap="setPage9Current" data-index="2">
+                <view class="dot {{currentPage9Index[2] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text> 肩 部</text>
+            </view>
+            <view class="radio" bindtap="setPage9Current" data-index="1">
+                <view class="dot {{currentPage9Index[1] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text> 颈 部</text>
+            </view>
+            <view class="radio" bindtap="setPage9Current" data-index="3">
+                <view class="dot {{currentPage9Index[3] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text> 背 部</text>
+            </view>
+            <view class="radio" bindtap="setPage9Current" data-index="4">
+                <view class="dot {{currentPage9Index[4] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text> 腰 部</text>
+            </view>
+            <view class="radio" bindtap="setPage9Current" data-index="5">
+                <view class="dot {{currentPage9Index[5] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text> 臀 部</text>
+            </view>
+            <view class="radio" bindtap="setPage9Current" data-index="6">
+                <view class="dot {{currentPage9Index[6] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text> 腿 部</text>
+            </view>
+            <view class="radio" bindtap="setPage9Current" data-index="7">
+                <view class="dot {{currentPage9Index[7] ? 'current' : ''}}">
+                    <view class="point"></view>
+                </view>
+                <text> 无 不 适</text>
+            </view>
+        </view>
+        <text class="title title2">您 对 床 垫 的 软 硬 偏 好 为 :</text>
+        <view class="rangeBox">
+            <slider min="1" max="3" style="position:relative;top:-8rpx;width: 81%; margin: 0 auto;" block-size="18"
+                activeColor='#fff' bindchange="setBedType"></slider>
+            <view style="width: 100%;display: flex;">
+                <view style="width: 20%;text-align: center;color: #fff;font-size: 25rpx;">偏软</view>
+                <view style="width: 60%;text-align: center;color: #fff;font-size: 25rpx;">适中</view>
+                <view style="width: 20%;text-align: center;color: #fff;font-size: 25rpx;">偏硬</view>
+            </view>
+            <!-- <view class="line">
+                <view class="_front lineType" bindtap="setBedType" data-index="1">
+                    <view class="liness" bindtap="setBedType" data-index="1">
+                    </view>
+                    <view class="_light" hidden="{{bedTypeIndex != 1}}" bindtap="setBedType" data-index="1">
+                    </view>
+                    <text class="textName" bindtap="setBedType" data-index="1">偏软</text>
+                </view>
+                <view class="_mid lineType" bindtap="setBedType" data-index="2">
+                    <view class="liness" bindtap="setBedType" data-index="2">
+                    </view>
+                    <view class="_light" hidden="{{bedTypeIndex != 2}}" bindtap="setBedType" data-index="2">
+                    </view>
+                    <text class="textName" bindtap="setBedType" data-index="2">适中</text>
+                </view>
+                <view class="_after lineType" bindtap="setBedType" data-index="3">
+                    <view class="liness" bindtap="setBedType" data-index="3">
+                    </view>
+                    <view class="_light" hidden="{{bedTypeIndex != 3}}" bindtap="setBedType" data-index="3">
+                    </view>
+                    <text class="textName" bindtap="setBedType" data-index="3">偏硬</text>
+                </view>
+            </view> -->
+        </view>
+        <text class="title title3">您 的 年 龄 段 :</text>
+        <view class="rangeBox rangeBox3">
+            <slider class="slider1" value="{{ageValue}}" bindchange="slider9change" block-size="18" activeColor='#fff'
+                style="width:80%;margin:0 auto;color:#fff" />
+            <view class="line">
+                <view class=" lineType" data-index="1">
+                    <text class="textName" data-index="1">-</text>
+                </view>
+                <view class=" lineType" data-index="2">
+                    <text class="textName" data-index="2">14</text>
+                </view>
+                <view class=" lineType" data-index="3">
+                    <text class="textName" data-index="3">20</text>
+                </view>
+                <view class=" lineType" data-index="3">
+                    <text class="textName" data-index="3">30</text>
+                </view>
+                <view class=" lineType" data-index="3">
+                    <text class="textName" data-index="3">40</text>
+                </view>
+                <view class=" lineType" data-index="3">
+                    <text class="textName" data-index="3">50</text>
+                </view>
+                <view class=" lineType" data-index="3">
+                    <text class="textName" data-index="3">60</text>
+                </view>
+                <view class=" lineType" data-index="3">
+                    <text class="textName" data-index="3">+</text>
+                </view>
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button" bindtap="jump" data-index="10">
+                <text class="startBtn">确认</text>
+            </view>
+        </view>
+    </view>
+    <!-- Page9 End -->
+    <!------------------------------------------------------------>
+    <!-- Page10 Start -->
+    <view class="page page10" hidden="{{currentPage != 10}}">
+        <view class="_result">
+            <view class="item bigs">
+
+                <view class="textBox"> <text class="_values">6</text><text class="_unit">级</text></view>
+                <view class="textBox"> <text class="_names">软硬舒适度</text></view>
+
+            </view>
+            <view class="item smalls">
+                <view class="textBox"> <text class="_values">Y1</text></view>
+                <view class="textBox"> <text class="_names">深睡睡眠枕</text></view>
+            </view>
+        </view>
+        <view class="titles">
+            您 适 合 睡 6 级 软 硬 舒 适 度 的 床 垫
+        </view>
+        <view class="lend">
+            <view class="item">
+                <text class="ios dian1"> · </text> <text>实 际 计 算 等 级</text>
+            </view>
+            <view class="item">
+                <text class="ios dian2"> · </text> <text>当 前 选 择 等 级</text>
+            </view>
+            <view class="item">
+                <text class="ios gen"> —— </text> <text>可 选 择 范 围</text>
+            </view>
+        </view>
+        <view class="_chose">
+            <view class="mark">
+                <view class="_icon" style="left:{{leftNum}}">
+
+                </view>
+            </view>
+            <slider class="slider10" value="{{slider10Value}}" backgroundColor="transparent" bindchange="slider2change"
+                block-color="#00a9de" block-size="15" activeColor='transparent' />
+            <slider class="slider11" value="{{slider11Value}}" backgroundColor="transparent" block-color="#00a9de"
+                block-color="#00a9de" block-size="12" activeColor='transparent' />
+            <view id="ranges" class="ranges" style="left:{{sliderMin10}}%;width:{{sliderMax10-sliderMin10}}%"></view>
+            <view class="itemBox">
+                <view> <text>1</text>
+                </view>
+                <view>
+                    <text>2</text>
+                </view>
+                <view>
+                    <text>3</text>
+                </view>
+                <view><text>4</text></view>
+                <view><text>5</text></view>
+                <view><text>6</text></view>
+                <view><text>7</text></view>
+                <view><text>8</text></view>
+                <view><text>9</text></view>
+                <view><text>10</text></view>
+            </view>
+        </view>
+        <!-- <view class="tiss">
+            <view class="titless">
+                偏软睡感
+            </view>
+            <view class="_text">
+                如果您平常喜欢比较绵软的睡感，你可以选择这个等级作为体验方案。较软的床垫更加符合您平时的睡眠习惯，舒适，解压。但
+                同时也要注意，偏软的床垫可能会使你在睡眠过程中，缺乏有效的承托，引发腰背酸痛等症状，这意味着床垫对您的支撑作用力不足，您可以适当选择稍硬些的床垫.
+            </view>
+        </view> -->
+        <view class="tiss">
+            <image class="body" src="http://risk.rfyfb.com/file/offLine/{{slider10Type}}.png" mode="widthFix"></image>
+        </view>
+
+        <view class="buttonbox">
+            <view class="button" bindtap="jumpEnd" data-index="11">
+                <text class="startBtn">确认</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- Page10 End -->
+    <!------------------------------------------------------------>
+    <!-- Page11 Start -->
+    <view class="report-box page page11" hidden="{{currentPage != 11}}">
+        <!-- 第一个框 -->
+        <view class="infobox total">
+            <text class="title">睡 眠 检 测 报 告</text>
+            <view class="_top">
+                <view class="basicInfo">
+                    <view class="icon" style="top:52rpx"></view>
+                    <view class="name" style="align-items:flex-end;letter-spacing:15rpx;">昵 称：</view>
+                    <view class="value" style="align-items:flex-end">{{info.nickname}}</view>
+                </view>
+                <view class="basicInfo">
+                    <view class="icon" style="top:52rpx"></view>
+                    <view class="name" style="align-items:flex-end;letter-spacing:15rpx;">性 别：</view>
+                    <view class="value" style="align-items:flex-end">{{info.sex}}</view>
+                </view>
+
+            </view>
+            <view class="_top">
+                <view class="basicInfo">
+                    <view class="icon"></view>
+                    <view class="name" style="letter-spacing:6rpx;">年龄范围：</view>
+                    <view class="value">{{info.age}}</view>
+                </view>
+                <view class="basicInfo">
+                    <view class="icon"></view>
+                    <view class="name" style="letter-spacing:6rpx;">体验平台：</view>
+                    <view class="value">线下测试平台</view>
+                </view>
+            </view>
+
+            <view class="_bottom">
+                <view class="info">
+                    <view class="b_name">身高(CM)</view>
+                    <view class="b_value">{{info.height}}</view>
+                </view>
+                <view class="info">
+                    <view class="b_name">体重(KG)</view>
+                    <view class="b_value">{{info.weight}}</view>
+                </view>
+                <view class="info">
+                    <view class="b_name">体型</view>
+                    <view class="b_value">{{info.shape}}</view>
+                </view>
+                <view class="info">
+                    <view class="b_name">BMI</view>
+                    <view class="b_value">{{info.bmi}}</view>
+                </view>
+            </view>
+            <view class="_bottom">
+                <view class="info" style="background-position:right;justify-content: flex-end;">
+                    <view class="b_name">肩颧距(CM)</view>
+                    <view class="b_value" style="left:81rpx">50</view>
+                </view>
+                <view class="info">
+                    <view class="b_name">颈部支撑高度</view>
+                    <view class="b_value" style="left:38rpx">30</view>
+                </view>
+                <view class="info" style="background-position:left;justify-content: flex-start;">
+                    <view class="b_name">实际测量等级</view>
+                    <view class="b_value" style="left:-3rpx">六级</view>
+                </view>
+            </view>
+        </view>
+        <!-- 第二个框 -->
+        <view class="infobox echartsBox">
+            <view class="pic pic1">
+                <image style="width:100%;height:100%" src="http://risk.rfyfb.com/file/offLine/11-1.png" mode="widthFix">
+                </image>
+            </view>
+            <view class="pic pic2">
+                <image style="width:100%;height:100%" src="http://risk.rfyfb.com/file/offLine/11-2.png" mode="widthFix">
+                </image>
+            </view>
+            <view class="pic pic3">
+                <image style="width:100%;height:100%" src="http://risk.rfyfb.com/file/offLine/11-3.png" mode="widthFix">
+                </image>
+            </view>
+            <view class="pic pic4">
+                <image style="width:100%;height:100%" src="http://risk.rfyfb.com/file/offLine/11-4.png" mode="widthFix">
+                </image>
+            </view>
+        </view>
+        <!-- 第三个框 -->
+        <view class="infobox levelBox">
+            <view class="_level levelInfo">
+                <view class="_value">
+                    {{info.hardnessGrade}}
+                </view>
+                <view class="_unit">
+                    级
+                </view>
+                <view class="_bottomText">
+                    软硬舒适度床垫
+                </view>
+            </view>
+            <view class="codePic levelInfo">
+                <image style="width:100rpx;height:100rpx" src="https://www.topsleep.net/static/M2.png" mode="widthFix">
+                </image>
+            </view>
+            <view class="_level2 levelInfo">
+                <view class="_value">
+                    {{info.pillowName}}
+                </view>
+                <view class="_bottomText">
+                    专属睡眠枕
+                </view>
+            </view>
+        </view>
+        <!-- 第三个框 -->
+        <view class="infobox goods">
+            <text class="title">已为您量身匹配下列睡眠产品</text>
+            <view class="content">
+                <view class="page-section page-section-spacing swiper">
+                    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}"
+                        bindchange="demo" current='{{current}}' vertical="{{vertical}}" interval="{{interval}}"
+                        duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+                        <block wx:for="{{background}}" wx:key="*this">
+                            <swiper-item>
+                                <view class="swiper-item">
+                                    <view class="conLeft">
+                                        <text class="textName">{{item.children[0].type}}</text>
+                                        <image wx:if="{{ item.children[0].name.length>0 }}" class="bgCode"
+                                            style="width: 86rpx;height: 86rpx;"
+                                            src="https://www.topsleep.net/static/{{item.children[0].name}}.png"
+                                            mode="widthFix">
+                                        </image>
+                                        <image wx:if="{{ item.children[0].goodBg.length>0 }}" class="bgGood"
+                                            style="width: 186rpx;height: 186rpx;"
+                                            src="https://www.topsleep.net/static/{{item.children[0].goodBg}}.png"
+                                            mode="widthFix">
+                                        </image>
+                                        <view class="goodName">{{item.children[0].name}}</view>
+                                        <view class="goodDes">{{item.children[0].des}}</view>
+                                        <view class="goodBtn" bindtap="productDetail"
+                                            data-name="{{item.children[0].name}}">点击查看详情<view class="hand"></view>
+                                        </view>
+                                    </view>
+                                    <view class="conRight">
+                                        <text class="textName">{{item.children[1].type}}</text>
+                                        <image wx:if="{{ item.children[1].name.length>0 }}" class="bgCode"
+                                            style="width: 86rpx;height: 86rpx;"
+                                            src="https://www.topsleep.net/static/{{item.children[1].name}}.png"
+                                            mode="widthFix">
+                                        </image>
+                                        <image wx:if="{{ item.children[1].goodBg.length>0 }}" class="bgGood"
+                                            style="width: 186rpx;height: 186rpx;"
+                                            src="https://www.topsleep.net/static/{{item.children[1].goodBg}}.png"
+                                            mode="widthFix">
+                                        </image>
+                                        <view class="goodName">{{item.children[1].name}}</view>
+                                        <view class="goodDes"> {{item.children[1].des}}</view>
+                                        <view class="goodBtn" bindtap="productDetail"
+                                            data-name="{{item.children[1].name}}">点击查看详情<view class="hand"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+                <view class='bottom'>
+                    <view class='btn-left' bindtap='prev'>
+                        <image src='https://www.topsleep.net/static/10-zuo.png'></image>
+                    </view>
+                    <view class='btn-right' bindtap='next'>
+                        <image src='https://www.topsleep.net/static/10-you.png'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="buttonbox">
+            <view class="button srues" bindtap="toMian">
+                <text class="startBtn" style="margin-right: 40rpx;">确认</text>
+            </view>
+            <view class="button reports" bindtap="toReport">
+                <text class="startBtn ">打印报告</text>
+            </view>
+        </view> 
+    </view>
+</view>

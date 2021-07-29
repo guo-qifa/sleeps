@@ -1,0 +1,179 @@
+<view class="report-box">
+    <image style="width: 40rpx; height: 40rpx; position:absolute; right: 10rpx;top:16rpx;" src="{{testImgUrl}}/step8.png"></image>
+    <image style="width: 140rpx; height: 40rpx; position:absolute; right: 10rpx;bottom:16rpx;" src="{{testImgUrl}}/logo.png"></image>
+    <!-- 第一个框 -->
+    <view class="infobox total">
+        <text class="title">睡 眠 检 测 报 告</text>
+        <view class="_top">
+            <view class="basicInfo" style="flex: 2">
+                <view class="icon"></view>
+                <view class="name">昵称：</view>
+                <view class="value">{{info.nickname}}</view>
+            </view>
+            <view class="basicInfo">
+                <view class="icon"></view>
+                <view class="name">性别：</view>
+                <view class="value" style="flex: 0.5">{{info.sex}}</view>
+            </view>
+            <view class="basicInfo">
+                <view class="icon"></view>
+                <view class="name">年龄：</view>
+                <view class="value" style="flex: 0.5">{{info.age}}</view>
+            </view>
+        </view>
+        <view class="_bottom">
+            <view class="info">
+                <image src="https://www.topsleep.net/static/10-circle.png" model="widthFix"></image>
+                <view class="b_name">身高(CM)</view>
+                <view class="b_value">{{info.height}}</view>
+            </view>
+            <view class="info">
+                <image src="https://www.topsleep.net/static/10-circle.png" model="widthFix"></image>
+                <view class="b_name">体重(KG)</view>
+                <view class="b_value">{{info.weight}}</view>
+            </view>
+            <view class="info">
+                <image src="https://www.topsleep.net/static/10-circle.png" model="widthFix"></image>
+                <view class="b_name">体型</view>
+                <view class="b_value">{{info.shape}}</view>
+            </view>
+            <view class="info" style="width:49%">
+                <image src="https://www.topsleep.net/static/10-circle.png" model="widthFix"></image>
+                <view class="b_name">BMI</view>
+                <view class="b_value">{{info.bmi}}</view>
+            </view>
+            <view class="info" style="width:49%">
+                <image src="https://www.topsleep.net/static/10-circle.png" model="widthFix"></image>
+                <view class="b_name">实际测量等级</view>
+                <view class="b_value">{{info.softHardPreference?info.softHardPreference:''}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 第二个框 -->
+    <view class="infobox levelBox">
+        <view class="_level levelInfo">
+            <view class="_value">
+                {{info.hardnessGrade}}
+            </view>
+            <view class="_unit">
+                级
+            </view>
+            <view class="_bottomText">
+                软硬舒适度床垫
+            </view>
+        </view>
+        <view class="codePic levelInfo">
+            <image style="width:100rpx;height:100rpx" data-src="https://topsleep.oss-cn-beijing.aliyuncs.com/backstage/20201207/软硬等级{{ hardnessGradeImage[info.hardnessGrade] || '7_1607347431133' }}.png" src="https://topsleep.oss-cn-beijing.aliyuncs.com/backstage/20201207/软硬等级{{ hardnessGradeImage[info.hardnessGrade] || '7_1607347431133' }}.png"
+                mode="widthFix" bindtap="previewImage"></image>
+        </view>
+        <view class="_level2 levelInfo">
+            <view class="_value">
+                {{info.pillowName}}
+            </view>
+            <view class="_bottomText">
+                专属睡眠枕
+            </view>
+        </view>
+    </view>
+    <!-- 第三个框 -->
+    <view class="infobox goods">
+        <text class="title">已为您量身匹配下列睡眠产品</text>
+        <view class="content">
+            <view class="page-section page-section-spacing swiper">
+                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}"
+                    bindchange="demo" current='{{current}}' vertical="{{vertical}}" interval="{{interval}}"
+                    duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+                    <block wx:for="{{background}}" wx:key="*this"> 
+                        <swiper-item>
+                            <view class="swiper-item">
+                                <view class="conLeft">
+                                    <text class="textName">{{item.children[0].type}}</text> 
+                                    <image wx:if="{{ item.children[0].name.length>0 }}" class="bgCode" style="width: 86rpx;height: 86rpx;"
+                                        src="https://www.topsleep.net/static/{{item.children[0].name}}.png" data-src="https://www.topsleep.net/static/{{item.children[0].name}}.png" bindtap="previewImage" mode="widthFix">
+                                    </image>
+                                    <image wx:if="{{ item.children[0].goodBg.length>0 }}" class="bgGood" style="width: 186rpx;height: 186rpx;"
+                                        src="https://www.topsleep.net/static/{{item.children[0].goodBg}}.png" bindtap="productDetail" data-name="{{item.children[0].name}}" mode="widthFix">
+                                    </image> 
+                                    <view class="goodName">{{item.children[0].name}}</view>
+                                    <view class="goodDes">{{item.children[0].des}}</view>
+                                    <view class="goodBtn" bindtap="productDetail" data-name="{{item.children[0].name}}" >点击查看详情<view class="hand"></view>
+                                    </view>
+                                </view>
+                                <view class="conRight">
+                                    <text class="textName">{{item.children[1].type}}</text> 
+                                    <image  wx:if="{{ item.children[1].name.length>0 }}" class="bgCode" style="width: 86rpx;height: 86rpx;"
+                                        src="https://www.topsleep.net/static/{{item.children[1].name}}.png" data-src="https://www.topsleep.net/static/{{item.children[1].name}}.png" bindtap="previewImage" mode="widthFix">
+                                    </image>
+                                    <image  wx:if="{{ item.children[1].goodBg.length>0 }}" class="bgGood" style="width: 186rpx;height: 186rpx;"
+                                        src="https://www.topsleep.net/static/{{item.children[1].goodBg}}.png" bindtap="productDetail" data-name="{{item.children[1].name}}" mode="widthFix">
+                                    </image> 
+                                    <view class="goodName">{{item.children[1].name}}</view>
+                                    <view class="goodDes"> {{item.children[1].des}}</view>
+                                    <view class="goodBtn" bindtap="productDetail"  data-name="{{item.children[1].name}}"  >点击查看详情<view class="hand"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </swiper-item>
+                    </block>
+                </swiper>
+            </view>
+            <view class='bottom'>
+                <view class='btn-left' bindtap='prev'>
+                    <image src='https://www.topsleep.net/static/10-zuo.png'></image>
+                </view>
+                <view class='btn-right' bindtap='next'>
+                    <image src='https://www.topsleep.net/static/10-you.png'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="buttonbox">
+        <view class="button" bindtap="toMian">
+            <text class="startBtn">确认</text>
+        </view>
+    </view>
+    <!-- <view class="toptext">
+        <image class="textimg" src="{{imgUrl}}/report_6.png" mode="widthFix"></image>
+        <text class="text-l"  bindtap="jumpShop" >{{info.hardnessGrade}}</text> 
+        <text class="text-r"  bindtap="jumpShop" >{{info.pillowName}}</text> 
+    </view>
+    <view class="infobox">
+        <image class="body" src="{{imgUrl}}/report_5.png" mode="widthFix"></image>
+        <view class="infowrap">
+            <text class="nickname">昵称: {{info.nickname}}</text>
+            <view class="itembox">
+                <view class="item">
+                    <image class="circular" src="{{imgUrl}}/report_4.png" mode="widthFix"></image>
+                    <text class="title">{{info.sex}}</text>
+                    <text class="value">性别</text>
+                </view>
+                <view class="item">
+                    <image class="circular" src="{{imgUrl}}/report_4.png" mode="widthFix"></image>
+                    <text class="title">{{info.age}}</text>
+                    <text class="value">年龄</text>
+                </view>
+                <view class="item">
+                    <image class="circular" src="{{imgUrl}}/report_4.png" mode="widthFix"></image>
+                    <text class="title">{{info.shape}}</text>
+                    <text class="value">体型</text>
+                </view>
+                <view class="item">
+                    <image class="circular" src="{{imgUrl}}/report_4.png" mode="widthFix"></image>
+                    <text class="title">{{info.bmi}}</text>
+                    <text class="value">BMI</text>
+                </view>
+                <view class="item">
+                    <image class="circular" src="{{imgUrl}}/report_4.png" mode="widthFix"></image>
+                    <text class="title">{{info.height}}cm</text>
+                    <text class="value">身高</text>
+                </view>
+                <view class="item">
+                    <image class="circular" src="{{imgUrl}}/report_4.png" mode="widthFix"></image>
+                    <text class="title">{{info.weight}}kg</text>
+                    <text class="value">体重</text>
+                </view>
+            </view>
+        </view>
+    </view> -->
+
+</view>

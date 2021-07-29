@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="index-box">
+    <view class="getPhoneBox"  wx:if="{{showPhoneDiv}}" >
+        <view class="tip">是否要获取用户手机号权限信息?</view>
+        <view class="con">
+            <button class="fou" bindtap="hidePhoneBox" >否</button>
+            <button class="shi" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">是</button>
+        </view>
+
+    </view>
+
+    <div class='topbg'></div>
+    <div class='textbg'></div>
+    <div class='midbg'>
+        <image class="midbg-img1" src="{{testImgUrl}}/index_circle.gif"></image>
+        <image class="midbg-img2" src="{{testImgUrl}}/index_people.png"></image>
+    </div>
+    <view class="userinfo" style="padding-top: {{flag ? 0 : '150rpx'}}">
+        <view wx:if="{{flag}}" class="button-wrap">
+            <button class="btnStyle" data-call="jumpTest" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                <image src="{{imgUrl}}/indexbtn1.png" mode="widthFix"></image>
+                <text>开始线上自助测试</text>
+            </button>
+            <button class="btnStyle br bl" data-call="jumCenter" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                <image src="{{imgUrl}}/indexbtn4.png" mode="widthFix"></image>
+                <text>个人中心</text>
+            </button>
+            <button class="btnStyle" data-call="scan" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                <image src="{{imgUrl}}/indexbtn2.png" mode="widthFix"></image>
+                <text>扫码开启线下测试</text>
+            </button>
+        </view>
+        <view wx:if="{{!flag}}" class="button-wrap">
+            <button class="btnStyle br" data-call="othLogin" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                <image src="../../images/indexbtn5.png" mode="widthFix"></image>
+                <text>确认登录</text>
+            </button>
+            <button class="btnStyle" data-call="othLoginCancel" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                <image src="../../images/indexbtn6.png" mode="widthFix"></image>
+                <text>取消登录</text>
+            </button>
+        </view>
+    </view>
+</view>

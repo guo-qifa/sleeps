@@ -1,0 +1,98 @@
+.list-box {
+    padding: 0px;
+    background: #1d2b41;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.list-box .background {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.list-box .logo {
+    text-align: center;
+    margin-top: 70rpx;
+    margin-bottom: 70rpx;
+}
+
+.list-box .logo image {
+    width: 255rpx;
+}
+
+.list-box .scroll-view {
+    width: 680rpx;
+    height: 650rpx;
+    margin: 0 auto;
+}
+
+.list-box .item {
+    background: #00a8de;
+    width: 100%;
+    display: flex;
+    padding: 15rpx 0rpx;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15rpx;
+    margin-bottom: 10rpx;
+    height: 120rpx;
+}
+
+.list-box .item .time {
+    width: 295rpx;
+    height: 90rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 26rpx;
+    border-right: 1px #d3f0f9 solid;
+}
+
+.list-box .item .typebox {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding-left: 20rpx;
+}
+
+.list-box .item .typebox .type {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: 22rpx;
+    color: #fff;
+    margin-right: 30rpx;
+}
+
+.list-box .item .typebox .type .value {
+    margin-top: 22rpx;
+    font-size: 36rpx;
+}
+
+.list-box .item .typebox image {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.list-box .text {
+    text-align: center;
+    color: #fff;
+    margin-top: 300rpx;
+    font-size: 40rpx;
+}
+
+.list-box .emptytext {
+    color: #fff;
+    font-size: 40rpx;
+}
